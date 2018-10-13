@@ -16,6 +16,7 @@ public class EnemyGrid : MonoBehaviour {
     GameObject shape;
     public Spawner spawner;
     Manager managerScript;
+    ButtonManager buttonManagerScript;
     int winNum;
     bool passed = false;
     bool failed = false;
@@ -25,6 +26,7 @@ public class EnemyGrid : MonoBehaviour {
         spawner = FindObjectOfType<Spawner>();
         pmanger = FindObjectOfType<placementManger>();
         managerScript = FindObjectOfType<Manager>();
+        buttonManagerScript = FindObjectOfType<ButtonManager>();
         CreateInstructions();
         winNum = 0;
     }
@@ -122,6 +124,7 @@ public class EnemyGrid : MonoBehaviour {
         if (other.gameObject.CompareTag("ScreenCollider")) {
             
             gameObject.transform.parent = null;
+            
             // Run check the the classes
             for (int i = 0; i < pmanger.colors.Length; i++) {
                 if (pmanger.colors[i] == colorChoice[i])
