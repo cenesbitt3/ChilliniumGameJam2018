@@ -45,7 +45,6 @@ public class placementObj : MonoBehaviour
         {
             color = 4;
             filled = false;
-
         }
     }
 }

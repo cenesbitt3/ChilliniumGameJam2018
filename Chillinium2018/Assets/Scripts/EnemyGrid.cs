@@ -15,6 +15,9 @@ public class EnemyGrid : MonoBehaviour {
     GameObject shape;
     public Spawner spawner;
     Manager managerScript;
+    int winNum;
+    bool passed = false;
+    bool failed = false;
 
     public void Awake()
     {
@@ -22,8 +25,9 @@ public class EnemyGrid : MonoBehaviour {
         pmanger = FindObjectOfType<placementManger>();
         managerScript = FindObjectOfType<Manager>();
         CreateInstructions();
+        winNum = 0;
     }
-
+    
     public void CreateInstructions()
     {
         
@@ -76,20 +80,31 @@ public class EnemyGrid : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ScreenCollider")) {
+            
             gameObject.transform.parent = null;
             // Run check the the classes
             for (int i = 0; i < pmanger.colors.Length; i++) {
                 if (pmanger.colors[i] == colorChoice[i])
                 {
-                    Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+                    winNum++;
+                   // Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
                 }
-                Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+               // Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+            }
+            if (winNum == 9)
+            {
+                passed = true;
+                Debug.Log(" true");
+            }
+            else
+            {
+                failed = true;
+                Debug.Log(" false");
             }
         }
     }
-
-    public void Update()
-    {
-      // if()
     }
-}
+
+   
+      
+

@@ -22,6 +22,7 @@ public class FloatBox : MonoBehaviour
     int CubeMask;
     GameObject parent;
     bool dragged = false;
+    bool col= false;
     void Awake()
     {
         mat = gameObject.GetComponent<Renderer>();
@@ -67,20 +68,28 @@ public class FloatBox : MonoBehaviour
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
-        
-       transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
-
+        if (!col)
+        {
+            transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
+        }
         drag = true;
         placement = false;
        
     }
-    
-    private void OnTriggerEnter(Collider other)
+
+    private void OnCollsionEnter(Collision other)
     {
-        
+        if (other.gameObject.CompareTag("wall"))
+        {
+            col = true;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.CompareTag("wall"))
+        {
+            col = false;
+        }
         if (other.CompareTag("placement"))
         {
             placement = false;
