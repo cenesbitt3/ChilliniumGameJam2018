@@ -13,6 +13,10 @@ public class TimerCreation : MonoBehaviour {
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            readyToSpawn = true;
+        }
         if (readyToSpawn)
         {
             playerGrid.SetActive(true);
