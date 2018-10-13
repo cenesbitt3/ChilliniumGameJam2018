@@ -9,12 +9,16 @@ public class Spawner : MonoBehaviour {
     public GameObject AtomPrefabRed;
     public GameObject AtomPrefabBlue;
     public GameObject AtomPrefabGreen;
+    GameObject Center;
+    float min = 50f;
+    float max = 80f;
 
     public List<GameObject> referenceToPlace = new List<GameObject>();
 
     GameObject holderGameObject;
 
 	void Start () {
+        Center = GameObject.Find("Center");
         //curGrid = FindObjectOfType<EnemyGrid>();
 	}
 	
@@ -40,13 +44,22 @@ public class Spawner : MonoBehaviour {
             EnemyPlacementManager enemyPlace = referenceToPlace[i].GetComponent<EnemyPlacementManager>();
             switch (enemyPlace.GetColor()) {
                 case 0:
-                    holderGameObject = Instantiate(AtomPrefabRed, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabRed.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabRed, Center.transform.position, AtomPrefabRed.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    //holderGameObject = Instantiate(AtomPrefabRed, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabRed.transform.rotation);
                     break;
                 case 1:
-                    holderGameObject = Instantiate(AtomPrefabGreen, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabGreen.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabGreen, Center.transform.position, AtomPrefabGreen.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    // holderGameObject = Instantiate(AtomPrefabGreen, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabGreen.transform.rotation);
                     break;
                 case 2:
-                    holderGameObject = Instantiate(AtomPrefabBlue, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabBlue.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabBlue, Center.transform.position, AtomPrefabBlue.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    // holderGameObject = Instantiate(AtomPrefabBlue, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabBlue.transform.rotation);
                     break;
             }
         }

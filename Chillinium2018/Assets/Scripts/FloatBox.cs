@@ -26,6 +26,7 @@ public class FloatBox : MonoBehaviour
     bool col= false;
     bool stuck;
     public GameObject pObject;
+    public float force;
     void Awake()
     {
         center = GameObject.Find("Center");
@@ -76,18 +77,20 @@ public class FloatBox : MonoBehaviour
      //   myRB.constraints = RigidbodyConstraints.FreezePositionZ;
 
     }
+    private void OnMouseUp()
+    {
+        drag = false;
 
+    }
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
         if (!col)
         {
-            
 
             Vector3 direction =  curPosition-myRB.transform.position;
-            myRB.AddForce(direction.normalized * 50f);
-
+            myRB.AddForce(direction.normalized * Vector3.Distance(curPosition,gameObject.transform.position)*30f);
            // transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
         }
         drag = true;
@@ -142,17 +145,16 @@ public class FloatBox : MonoBehaviour
     {
         if (other.CompareTag("placement"))
         {
-            stuck = true;
-            pObject = other.gameObject;
-            stuckOnPlace(other.gameObject);
+            if (!drag) { 
+           
+                stuck = true;
+                pObject = other.gameObject;
+                stuckOnPlace(other.gameObject);
+            }
         }
     }
     
-    private void LateUpdate()
-    {
-        drag = false;
-        
-    }
+    
     void stuckOnPlace(GameObject placementObj)
     {
         if (stuck)
