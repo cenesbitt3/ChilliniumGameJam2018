@@ -773,6 +773,7 @@ MonoBehaviour:
   - {fileID: 1236698943724976}
   - {fileID: 1329129038770638}
   - {fileID: 1659272356856754}
+  spawner: {fileID: 0}
 --- !u!114 &114443420648850626
 MonoBehaviour:
   m_ObjectHideFlags: 1

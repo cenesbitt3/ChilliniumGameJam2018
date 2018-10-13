@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -33,18 +34,19 @@ public class Spawner : MonoBehaviour {
     }
 
     public void Spawn2() {
+        
         for (int i = 0; i < referenceToPlace.Count; i++)
         {
             EnemyPlacementManager enemyPlace = referenceToPlace[i].GetComponent<EnemyPlacementManager>();
             switch (enemyPlace.GetColor()) {
                 case 0:
-                    holderGameObject = Instantiate(AtomPrefabRed, new Vector3(Random.Range(-5, 5), Random.Range(-12, 3), 10.5f), AtomPrefabRed.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabRed, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabRed.transform.rotation);
                     break;
                 case 1:
-                    holderGameObject = Instantiate(AtomPrefabGreen, new Vector3(Random.Range(-5, 5), Random.Range(-12, 3), 10.5f), AtomPrefabGreen.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabGreen, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabGreen.transform.rotation);
                     break;
                 case 2:
-                    holderGameObject = Instantiate(AtomPrefabBlue, new Vector3(Random.Range(-5, 5), Random.Range(-12, 3), 10.5f), AtomPrefabBlue.transform.rotation);
+                    holderGameObject = Instantiate(AtomPrefabBlue, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabBlue.transform.rotation);
                     break;
             }
         }

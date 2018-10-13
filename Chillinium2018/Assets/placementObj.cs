@@ -10,7 +10,10 @@ public class placementObj : MonoBehaviour
     public int placement;
     public GameObject occupyFloat;
 
-
+    private void Awake()
+    {
+        color = 4;
+    }
 
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +33,7 @@ public class placementObj : MonoBehaviour
             }
             else
             {
-
+                color = 4;
                 other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
                 other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             }
@@ -40,6 +43,7 @@ public class placementObj : MonoBehaviour
     {
         if (other.CompareTag("float"))
         {
+            color = 4;
             filled = false;
 
         }
