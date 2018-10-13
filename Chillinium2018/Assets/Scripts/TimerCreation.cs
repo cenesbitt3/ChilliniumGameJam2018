@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimerCreation : MonoBehaviour {
 
-    public float timer = 3.0f;
+    public float timer = 5.0f;
     public GameObject creationPosition;
     public GameObject grid;
 
