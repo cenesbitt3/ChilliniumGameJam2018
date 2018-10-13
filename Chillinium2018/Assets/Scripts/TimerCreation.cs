@@ -10,6 +10,6 @@ public class TimerCreation : MonoBehaviour {
 
     public void Update()
     {
-        if(grid)
+        //if(grid)
     }
 }

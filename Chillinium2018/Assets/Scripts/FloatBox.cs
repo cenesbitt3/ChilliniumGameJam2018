@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class FloatBox : MonoBehaviour {
+public class FloatBox : MonoBehaviour
+{
     Rigidbody myRB;
     float min = 20f;
     float max = 40f;
     public Camera cam;
-    bool drag= false;
+    bool drag = false;
     private Vector3 screenPoint;
     private Vector3 offset;
     bool placement = false;
     // float camRayLength = 10000;
     int CubeMask;
-    void Awake () {
+    GameObject parent;
+    bool dragged = false;
+    void Awake()
+    {
         cam = GameObject.Find("MainCam").GetComponent<Camera>();
         CubeMask = LayerMask.GetMask("Float");
         myRB = gameObject.GetComponent<Rigidbody>();
-        myRB.AddForce(new Vector3(Random.Range(min,max ), Random.Range(min, max), Random.Range(min, max)));
+        myRB.AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
         myRB.AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
 
     }
@@ -26,42 +30,86 @@ public class FloatBox : MonoBehaviour {
 
     private void Update()
     {
-       
+       /* if (Input.GetButtonUp("Fire1"))
+        {
+            if (placement)
+            {
+                try
+                {
+                    if (placement)
+                    {
+
+                            gameObject.transform.position = parent.transform.position;
+                            myRB.constraints = RigidbodyConstraints.FreezePosition;
+                   
+                    }
+                }
+                catch
+                {
+
+                }
+               
+
+            }
+            else
+            {
+                transform.parent = null;
+                myRB.constraints = RigidbodyConstraints.None;
+                myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+            }
+        }*/
     }
     void OnMouseDown()
     {
         screenPoint = cam.WorldToScreenPoint(transform.position);
         offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        placement = false;
+     //   transform.parent = null;
+    //    myRB.constraints = RigidbodyConstraints.None;
+     //   myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+
     }
 
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
-        transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
+        
+       transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
+
+        drag = true;
+        placement = false;
+       
     }
-    private void OnMouseUp()
-    {
-        if (placement)
-        {
-            myRB.constraints = RigidbodyConstraints.FreezePosition;
-            transform.position = gameObject.transform.position;
-        }
-        else
-        {
-            myRB.constraints = RigidbodyConstraints.None;
-            myRB.constraints = RigidbodyConstraints.FreezePositionZ;
-        }
-     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("placement"))
         {
-            placement = true;
+           // if (drag) { 
+              //  gameObject.transform.position = other.transform.position;
+            myRB.constraints = RigidbodyConstraints.FreezePosition;
+                gameObject.transform.position = other.transform.position;
+                placement = true;
+       // }
+            
         }
         else
         {
             placement = false;
+            transform.parent = null;
+            myRB.constraints = RigidbodyConstraints.None;
+            myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("placement"))
+        {
+            placement = false;
+            transform.parent = null;
+            myRB.constraints = RigidbodyConstraints.None;
+            myRB.constraints = RigidbodyConstraints.FreezePositionZ;
         }
     }
 
@@ -69,9 +117,9 @@ public class FloatBox : MonoBehaviour {
 
     private void OnCollisionEnter(Collision other)
     {
-        
-        
-        if (other.gameObject.CompareTag("wall")|| other.gameObject.CompareTag("float"))
+
+
+        if (other.gameObject.CompareTag("wall") || other.gameObject.CompareTag("float"))
         {
             Vector3 dir = other.contacts[0].point - transform.position;
             dir = -dir.normalized;
@@ -82,6 +130,6 @@ public class FloatBox : MonoBehaviour {
     }
     private void OnMouseOver()
     {
-        
+
     }
 }
