@@ -9,13 +9,22 @@ public class TimerCreation : MonoBehaviour {
     public GameObject grid;
     public Transform ring;
 
+    bool readyToSpawn = false;
+
     public void Update()
     {
-
-        if (!GameObject.FindGameObjectWithTag("Grid")) {
-            GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
-            newGrid.transform.parent = ring;
+        if (readyToSpawn)
+        {
+            if (!GameObject.FindGameObjectWithTag("Grid"))
+            {
+                GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
+                newGrid.transform.parent = ring;
+            }
         }
 
+    }
+
+    public void SetReadyToSpawn(bool ready) {
+        readyToSpawn = ready;
     }
 }

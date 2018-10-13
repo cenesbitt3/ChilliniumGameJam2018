@@ -8,6 +8,8 @@ TagManager:
   - float
   - Grid
   - ScreenCollider
+  - Text
+  - Destroyer
   layers:
   - Default
   - TransparentFX
