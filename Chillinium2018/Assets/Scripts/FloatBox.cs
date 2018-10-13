@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class FloatBox : MonoBehaviour
 {
+    GameObject center;
     public int color;
     public Renderer mat;
     public Material red;
@@ -25,6 +26,7 @@ public class FloatBox : MonoBehaviour
     bool col= false;
     void Awake()
     {
+        center = GameObject.Find("Center");
         mat = gameObject.GetComponent<Renderer>();
         cam = GameObject.Find("MainCam").GetComponent<Camera>();
         CubeMask = LayerMask.GetMask("Float");
@@ -55,9 +57,12 @@ public class FloatBox : MonoBehaviour
     }
     void OnMouseDown()
     {
-        screenPoint = cam.WorldToScreenPoint(transform.position);
-        offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-        placement = false;
+        if (!col)
+        {
+            screenPoint = cam.WorldToScreenPoint(transform.position);
+            offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            placement = false;
+        }
      //   transform.parent = null;
     //    myRB.constraints = RigidbodyConstraints.None;
      //   myRB.constraints = RigidbodyConstraints.FreezePositionZ;
@@ -66,10 +71,11 @@ public class FloatBox : MonoBehaviour
 
     void OnMouseDrag()
     {
-        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-        Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
         if (!col)
         {
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+        Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
+        
             transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
         }
         drag = true;
@@ -82,6 +88,8 @@ public class FloatBox : MonoBehaviour
         if (other.gameObject.CompareTag("wall"))
         {
             col = true;
+            
+            transform.position = Vector3.Lerp(transform.position, center.transform.position, 500f * Time.deltaTime);
         }
     }
     private void OnTriggerExit(Collider other)
