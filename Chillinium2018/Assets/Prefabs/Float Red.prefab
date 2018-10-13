@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23474734655464250}
   - component: {fileID: 54403991003205740}
   - component: {fileID: 114778730813610342}
-  - component: {fileID: 64542203007167244}
+  - component: {fileID: 135002170642259844}
   m_Layer: 9
   m_Name: Float Red
   m_TagString: float
@@ -101,20 +101,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!64 &64542203007167244
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1507816747948564}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: a3034790a942a66438fe24e44d5bf7f7, type: 3}
 --- !u!114 &114778730813610342
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,3 +121,15 @@ MonoBehaviour:
   drag: 0
   pObject: {fileID: 0}
   force: 30
+--- !u!135 &135002170642259844
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507816747948564}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.6
+  m_Center: {x: 0, y: 0, z: 0}
