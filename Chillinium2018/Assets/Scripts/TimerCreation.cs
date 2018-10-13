@@ -10,10 +10,6 @@ public class TimerCreation : MonoBehaviour {
 
     public void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0) {
-            Instantiate(grid, creationPosition.transform.position, Quaternion.identity);
-            timer = 3.0f;
-        }
+        if(grid)
     }
 }
