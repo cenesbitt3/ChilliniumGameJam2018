@@ -90,12 +90,13 @@ public class EnemyGrid : MonoBehaviour {
             foreach (GameObject g in floats) {
                 Rigidbody rb = g.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
+                rb.AddExplosionForce(10.0f, managerScript.convergenceSpot.transform.position, 10.0f);
                 
             }
             foreach (GameObject g in floats) {
                 Destroy(g);
             }
-            managerScript.atomExplosion.Play();
+            managerScript.greenExplosion.Play();
             Debug.Log("Time to create the next instructions");
             Destroy(this.gameObject);
 
@@ -108,14 +109,17 @@ public class EnemyGrid : MonoBehaviour {
             {
                 Rigidbody rb = g.GetComponent<Rigidbody>();
                 rb.constraints = RigidbodyConstraints.None;
-                
+                rb.AddExplosionForce(10.0f, managerScript.convergenceSpot.transform.position, 10.0f);
+
             }
              foreach (GameObject g in floats)
             {
                Destroy(g);
             }
-            managerScript.atomExplosion.Play();
-            // Bring up game over screen/restrt screen
+            managerScript.redExplosion.Play();
+            this.gameObject.SetActive(false);
+            // Game over screen
+            buttonManagerScript.TurnOnGameOver();
         }
     }
 
