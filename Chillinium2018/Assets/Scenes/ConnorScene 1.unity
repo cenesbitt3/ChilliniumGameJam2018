@@ -137,6 +137,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4581604480683170, guid: 87ca5b0e5618fde44a2d9075951b2b02,
     type: 2}
   m_PrefabInternal: {fileID: 1683478973}
+--- !u!1 &133114096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1625966077280676, guid: bbef3c105c8de344ebf4801b9006f7df,
+    type: 2}
+  m_PrefabInternal: {fileID: 746270707}
+--- !u!1 &147989426 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1099939488296522, guid: bbef3c105c8de344ebf4801b9006f7df,
+    type: 2}
+  m_PrefabInternal: {fileID: 746270707}
 --- !u!1001 &406073850
 Prefab:
   m_ObjectHideFlags: 0
@@ -575,6 +585,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbef3c105c8de344ebf4801b9006f7df, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &784634040 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1928710657611136, guid: bbef3c105c8de344ebf4801b9006f7df,
+    type: 2}
+  m_PrefabInternal: {fileID: 746270707}
 --- !u!1 &829533617
 GameObject:
   m_ObjectHideFlags: 0
@@ -790,6 +805,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1825180236964132, guid: 87ca5b0e5618fde44a2d9075951b2b02,
     type: 2}
   m_PrefabInternal: {fileID: 1683478973}
+--- !u!1 &1189502334 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1530402828278074, guid: bbef3c105c8de344ebf4801b9006f7df,
+    type: 2}
+  m_PrefabInternal: {fileID: 746270707}
 --- !u!1 &1362636079 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1073130571095460, guid: 87ca5b0e5618fde44a2d9075951b2b02,
@@ -923,6 +943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505511860}
   - component: {fileID: 1505511859}
+  - component: {fileID: 1505511862}
   - component: {fileID: 1505511861}
   m_Layer: 0
   m_Name: GameManger
@@ -980,6 +1001,29 @@ MonoBehaviour:
   ring: {fileID: 54961027}
   convergenceSpot: {fileID: 1503458583}
   atomExplosion: {fileID: 892020143}
+--- !u!114 &1505511862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1505511858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448f0c7871a0f29458b3be18146ddeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionScreen: {fileID: 147989426}
+  exitInstructionButton: {fileID: 1189502334}
+  creditsScreen: {fileID: 1516112223}
+  instructionButton: {fileID: 147989426}
+  quitButton: {fileID: 133114096}
+  creditsButton: {fileID: 1516112223}
+  exitCreditButton: {fileID: 784634040}
+--- !u!1 &1516112223 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1745108222831870, guid: bbef3c105c8de344ebf4801b9006f7df,
+    type: 2}
+  m_PrefabInternal: {fileID: 746270707}
 --- !u!1001 &1574518373
 Prefab:
   m_ObjectHideFlags: 0
