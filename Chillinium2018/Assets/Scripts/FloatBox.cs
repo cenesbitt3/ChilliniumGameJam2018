@@ -11,6 +11,7 @@ public class FloatBox : MonoBehaviour {
     bool drag= false;
     private Vector3 screenPoint;
     private Vector3 offset;
+    bool placement = false;
     // float camRayLength = 10000;
     int CubeMask;
     void Awake () {
@@ -21,57 +22,12 @@ public class FloatBox : MonoBehaviour {
         myRB.AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
 
     }
-    
-   
-    void Update()
+
+
+    private void Update()
     {
-       /* Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit CubeHit;
-        
-        if (Input.GetButton("Fire1"))
-        {
-
-            if (Physics.Raycast(camRay, out CubeHit, Mathf.Infinity, CubeMask))
-            {
-                drag = true;
-                Drag(CubeHit.collider.gameObject);
-            }
-
-        }
-        else
-        {
-            drag = false;
-        }*/
-        
-        
+       
     }
-    
-    private void Drag(GameObject curCube)
-    {
-      /*  if (drag)
-        {
-            Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit CubeHit;
-            if (Physics.Raycast(camRay, out CubeHit, Mathf.Infinity))
-            {
-                Vector3 dir = Vector3.Lerp(transform.position, CubeHit.point, 50f * Time.deltaTime);
-                dir.z = 0f;
-                curCube.transform.position = (dir);
-            }
-        }
-        /*  Ray camRay = cam.ScreenPointToRay(Input.mousePosition);
-          RaycastHit CubeHit;
-
-          if (Physics.Raycast(camRay, out CubeHit, Mathf.Infinity, CubeMask))
-          {
-
-                  Vector3 dir = Vector3.Lerp(transform.position, CubeHit.point, 50f * Time.deltaTime);
-                  dir.z = 0f;
-                 curCube.transform.position = (dir);
-
-          }*/
-    }
-
     void OnMouseDown()
     {
         screenPoint = cam.WorldToScreenPoint(transform.position);
@@ -84,6 +40,32 @@ public class FloatBox : MonoBehaviour {
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
         transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
     }
+    private void OnMouseUp()
+    {
+        if (placement)
+        {
+            myRB.constraints = RigidbodyConstraints.FreezePosition;
+            transform.position = gameObject.transform.position;
+        }
+        else
+        {
+            myRB.constraints = RigidbodyConstraints.None;
+            myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+        }
+     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("placement"))
+        {
+            placement = true;
+        }
+        else
+        {
+            placement = false;
+        }
+    }
+
+
 
     private void OnCollisionEnter(Collision other)
     {
