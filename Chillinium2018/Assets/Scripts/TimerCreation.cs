@@ -11,9 +11,13 @@ public class TimerCreation : MonoBehaviour {
 
     public void Update()
     {
+<<<<<<< HEAD
         if (!GameObject.FindGameObjectWithTag("Grid")) {
             GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
             newGrid.transform.parent = ring;
         }
+=======
+        //if(grid)
+>>>>>>> Connor
     }
 }
