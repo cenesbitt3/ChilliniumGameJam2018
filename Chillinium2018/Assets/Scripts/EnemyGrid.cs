@@ -77,6 +77,29 @@ public class EnemyGrid : MonoBehaviour {
 
     }
 
+    public void Update()
+    {
+        if (passed) {
+            Destroy(this.gameObject);
+            GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
+            foreach (GameObject g in floats) {
+                Destroy(g);
+            }
+            Debug.Log("Time to create the next instructions");
+
+        }
+
+        if (failed) {
+            Destroy(this.gameObject);
+            GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
+            foreach (GameObject g in floats)
+            {
+                Destroy(g);
+            }
+            // Bring up game over screen/restrt screen
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("ScreenCollider")) {
