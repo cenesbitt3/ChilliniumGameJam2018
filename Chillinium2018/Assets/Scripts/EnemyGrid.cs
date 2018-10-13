@@ -24,9 +24,9 @@ public class EnemyGrid : MonoBehaviour {
             if (filledChoice == 1)
             {
                 filled = false;
-                places[i].SetActive(false);
+                //places[i].SetActive(false);
                 Debug.Log("Why is theui");
-                continue;
+                //continue;
             }
             else if(filledChoice == 1){
                 filled = true;
@@ -51,6 +51,6 @@ public class EnemyGrid : MonoBehaviour {
 
     public void Update()
     {
-        gameObject.transform.Translate(Vector3.forward * -1.0f * Time.deltaTime);
+       // gameObject.transform.Translate(Vector3.forward * -1.0f * Time.deltaTime);
     }
 }
