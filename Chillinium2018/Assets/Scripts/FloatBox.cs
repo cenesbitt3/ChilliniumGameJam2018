@@ -124,6 +124,9 @@ public class FloatBox : MonoBehaviour
     }
     private void OnMouseOver()
     {
+        if (col)
+        {
 
+        }
     }
 }

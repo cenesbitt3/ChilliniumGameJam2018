@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour {
     public void Update()
     {
         if (!startOfGame) {
+
             holderGameObject = Instantiate(introText, posToCreate.transform.position, posToCreate.transform.rotation);
             holderGameObject.transform.parent = ring.transform;
             startOfGame = true;
