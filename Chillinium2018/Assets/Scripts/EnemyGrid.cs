@@ -24,9 +24,8 @@ public class EnemyGrid : MonoBehaviour {
             if (filledChoice == 1)
             {
                 filled = false;
-                //places[i].SetActive(false);
-                Debug.Log("Why is theui");
-                //continue;
+                places[i].SetActive(false);
+                continue;
             }
             else if(filledChoice == 1){
                 filled = true;
@@ -46,11 +45,22 @@ public class EnemyGrid : MonoBehaviour {
                     mesh.material = managerScript.mats[2];
                     break;
             }
+            EnemyPlacementManager enemyPlace = places[i].GetComponent<EnemyPlacementManager>();
+            enemyPlace.FillValues(colorChoice, i, filled);
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("ScreenCollider")) {
+            gameObject.transform.parent = null;
+            // Run check the the classes
+
         }
     }
 
     public void Update()
     {
-       // gameObject.transform.Translate(Vector3.forward * -1.0f * Time.deltaTime);
+      // if()
     }
 }
