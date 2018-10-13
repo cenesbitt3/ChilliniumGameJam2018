@@ -11,6 +11,12 @@ public class Manager : MonoBehaviour {
     bool startOfGame = false;
     bool readyToPlay = false;
     GameObject holderGameObject;
+    ButtonManager buttonManagerScript;
+
+    public void Awake()
+    {
+        buttonManagerScript = FindObjectOfType<ButtonManager>();
+    }
 
     public void Update()
     {
@@ -27,9 +33,11 @@ public class Manager : MonoBehaviour {
             }
         }
 
-        if (Input.anyKeyDown) {
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse1) && !Input.GetKeyDown(KeyCode.Mouse2)) {
             if (readyToPlay) {
                 holderGameObject.transform.parent = ring.transform;
+                buttonManagerScript.instructionButton.SetActive(false);
+                buttonManagerScript.quitButton.SetActive(false);
             }
         }
     }
@@ -37,5 +45,6 @@ public class Manager : MonoBehaviour {
     public void SetReadyToPlay(bool ready) {
         readyToPlay = ready;
         Debug.Log("We are ready to press any button and play");
+        
     }
 }
