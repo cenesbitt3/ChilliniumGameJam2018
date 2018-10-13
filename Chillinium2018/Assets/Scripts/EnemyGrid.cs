@@ -21,7 +21,13 @@ public class EnemyGrid : MonoBehaviour {
         spawner = FindObjectOfType<Spawner>();
         pmanger = FindObjectOfType<placementManger>();
         managerScript = FindObjectOfType<Manager>();
-        spawner.Spawn();
+        CreateInstructions();
+    }
+
+    public void CreateInstructions()
+    {
+        
+       // spawner.Spawn();
         for (int i = 0; i < places.Length; i++) {
             colorChoice[i] = Random.Range(0, 3);
 
@@ -29,9 +35,9 @@ public class EnemyGrid : MonoBehaviour {
 
             if (filledChoice[i] == 1)
             {
-                isFilled = true; // switvh to false later
-               // places[i].SetActive(false);
-                //continue;
+                isFilled = false;
+                places[i].SetActive(false);
+                continue;
             }
             else if(filledChoice[i] == 1){
                 isFilled = true;
@@ -53,7 +59,13 @@ public class EnemyGrid : MonoBehaviour {
             }
             EnemyPlacementManager enemyPlace = places[i].GetComponent<EnemyPlacementManager>();
             enemyPlace.FillValues(colorChoice[i], i, isFilled);
+            if (isFilled)
+            {
+                spawner.referenceToPlace.Add(places[i]);
+            }
         }
+        spawner.Spawn2();
+
     }
 
     public void OnTriggerEnter(Collider other)
