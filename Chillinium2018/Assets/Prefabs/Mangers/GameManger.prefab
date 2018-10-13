@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114626073649383920}
   - component: {fileID: 114853019383973202}
   - component: {fileID: 114110424233615648}
+  - component: {fileID: 114273716207828196}
+  - component: {fileID: 114546521428021088}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -60,6 +62,49 @@ MonoBehaviour:
   quitButton: {fileID: 0}
   creditsButton: {fileID: 0}
   exitCreditButton: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  restartButton: {fileID: 0}
+--- !u!114 &114273716207828196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d930c54440072448b9fd9cc75749895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: d51c14b6f4e83224592f41a519783142, type: 2}
+  - {fileID: 2100000, guid: 1ac05411ee2cf5b45815a9c20bc26e00, type: 2}
+  - {fileID: 2100000, guid: 6f9a9496900dfc941bac09c01f112f1e, type: 2}
+  introText: {fileID: 1583624184151974, guid: 8b5d9af89572cff419679780679f112d, type: 2}
+  posToCreate: {fileID: 0}
+  ring: {fileID: 0}
+  convergenceSpot: {fileID: 0}
+  redExplosion: {fileID: 0}
+  greenExplosion: {fileID: 0}
+--- !u!114 &114546521428021088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448f0c7871a0f29458b3be18146ddeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionScreen: {fileID: 0}
+  exitInstructionButton: {fileID: 0}
+  creditsScreen: {fileID: 0}
+  instructionButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  exitCreditButton: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  restartButton: {fileID: 0}
 --- !u!114 &114626073649383920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,4 +140,5 @@ MonoBehaviour:
   posToCreate: {fileID: 0}
   ring: {fileID: 0}
   convergenceSpot: {fileID: 0}
-  atomExplosion: {fileID: 0}
+  redExplosion: {fileID: 0}
+  greenExplosion: {fileID: 0}
