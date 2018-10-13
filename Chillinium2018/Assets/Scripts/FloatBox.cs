@@ -62,6 +62,7 @@ public class FloatBox : MonoBehaviour
             myRB.constraints = RigidbodyConstraints.None;
               myRB.constraints = RigidbodyConstraints.FreezePositionZ;
         }
+        
     }
     void OnMouseDown()
     {
@@ -72,9 +73,7 @@ public class FloatBox : MonoBehaviour
             offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
             placement = false;
         }
-     //   transform.parent = null;
-    //    myRB.constraints = RigidbodyConstraints.None;
-     //   myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+     
 
     }
     private void OnMouseUp()
