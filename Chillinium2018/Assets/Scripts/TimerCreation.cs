@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class TimerCreation : MonoBehaviour {
 
-    public float timer = 3.0f;
+    public float timer = 5.0f;
     public GameObject creationPosition;
     public GameObject grid;
+    public Transform ring;
 
     public void Update()
     {
-        timer -= Time.deltaTime;
-        if (timer <= 0) {
-            Instantiate(grid, creationPosition.transform.position, Quaternion.identity);
-            timer = 3.0f;
+        if (!GameObject.FindGameObjectWithTag("Grid")) {
+            GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
+            newGrid.transform.parent = ring;
         }
     }
 }

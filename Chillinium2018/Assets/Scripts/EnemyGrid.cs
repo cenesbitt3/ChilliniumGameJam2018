@@ -7,7 +7,7 @@ public class EnemyGrid : MonoBehaviour {
     public GameObject[] places = new GameObject[9];
 
     int colorChoice;
-    int shapeChoice;
+    int filledChoice;
     bool filled;
     GameObject shape;
 
@@ -19,8 +19,19 @@ public class EnemyGrid : MonoBehaviour {
 
         for (int i = 0; i < places.Length; i++) {
             colorChoice = Random.Range(0, 3);
-            shapeChoice = Random.Range(1, 3);
+            filledChoice = Random.Range(0, 2);
 
+            if (filledChoice == 1)
+            {
+                filled = false;
+                //places[i].SetActive(false);
+                Debug.Log("Why is theui");
+                //continue;
+            }
+            else if(filledChoice == 1){
+                filled = true;
+                places[i].SetActive(true);
+            }
 
             MeshRenderer mesh = places[i].GetComponent<MeshRenderer>();
 
@@ -40,6 +51,6 @@ public class EnemyGrid : MonoBehaviour {
 
     public void Update()
     {
-        gameObject.transform.Translate(Vector3.forward * -1.0f * Time.deltaTime);
+       // gameObject.transform.Translate(Vector3.forward * -1.0f * Time.deltaTime);
     }
 }
