@@ -13,7 +13,7 @@ public class EnemyGrid : MonoBehaviour {
     int[] filledChoice = new int[9];
     bool[] filled = new bool[9];
     GameObject shape;
-    Spawner spawner;
+    public Spawner spawner;
     Manager managerScript;
 
     public void Awake()
@@ -29,18 +29,20 @@ public class EnemyGrid : MonoBehaviour {
         
        // spawner.Spawn();
         for (int i = 0; i < places.Length; i++) {
-            colorChoice[i] = Random.Range(0, 3);
+            
 
             filledChoice[i] = Random.Range(0, 2);
 
             if (filledChoice[i] == 1)
             {
                 isFilled = false;
+                colorChoice[i] = 4;
                 places[i].SetActive(false);
                 continue;
             }
-            else if(filledChoice[i] == 1){
+            else if(filledChoice[i] != 1){
                 isFilled = true;
+                colorChoice[i] = Random.Range(0, 3);
                 places[i].SetActive(true);
             }
             filled[i] = isFilled;
@@ -57,11 +59,14 @@ public class EnemyGrid : MonoBehaviour {
                     mesh.material = managerScript.mats[2];
                     break;
             }
+            
             EnemyPlacementManager enemyPlace = places[i].GetComponent<EnemyPlacementManager>();
             enemyPlace.FillValues(colorChoice[i], i, isFilled);
             if (isFilled)
             {
+               // Debug.Log("ok");
                 spawner.referenceToPlace.Add(places[i]);
+                
             }
         }
         spawner.Spawn2();
@@ -76,8 +81,9 @@ public class EnemyGrid : MonoBehaviour {
             for (int i = 0; i < pmanger.colors.Length; i++) {
                 if (pmanger.colors[i] == colorChoice[i])
                 {
-                    Debug.Log("working");
+                    Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
                 }
+                Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
             }
         }
     }
