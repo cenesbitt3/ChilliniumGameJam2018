@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimerCreation : MonoBehaviour {
 
     public float timer = 5.0f;
-    public GameObject creationPosition;
+    public GameObject creationPosition, playerGrid;
     public GameObject grid;
     public Transform ring;
 
@@ -15,6 +15,7 @@ public class TimerCreation : MonoBehaviour {
     {
         if (readyToSpawn)
         {
+            playerGrid.SetActive(true);
             if (!GameObject.FindGameObjectWithTag("Grid"))
             {
                 GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
