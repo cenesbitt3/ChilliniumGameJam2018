@@ -13,4 +13,8 @@ public class EnemyPlacementManager : MonoBehaviour {
         placement = setPlacement;
         filled = setFill;
     }
+
+    public int GetColor() {
+        return color;
+    }
 }
