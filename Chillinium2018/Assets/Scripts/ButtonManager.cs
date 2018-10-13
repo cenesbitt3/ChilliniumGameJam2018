@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ButtonManager : MonoBehaviour {
-    public GameObject instructionScreen, exitInstructionButton, creditsScreen, instructionButton, quitButton, creditsButton, exitCreditButton;
+    public GameObject instructionScreen, exitInstructionButton, creditsScreen, instructionButton, quitButton, creditsButton, exitCreditButton, gameOverScreen, restartButton;
 
     public void InstructionsButton() {
         Time.timeScale = 0f;
@@ -42,4 +42,13 @@ public class ButtonManager : MonoBehaviour {
         exitCreditButton.SetActive(false);
         InstructionsButton();
     }
+
+    public void TurnOnGameOver() {
+        gameOverScreen.gameObject.SetActive(true);
+        restartButton.SetActive(true);
+        quitButton.SetActive(true);
+
+    }
+
+
 }
