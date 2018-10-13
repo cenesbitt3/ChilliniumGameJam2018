@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class FloatBox : MonoBehaviour
 {
+    public int color;
+    public Renderer mat;
+    public Material red;
+    public Material green;
+    public Material blue;
     Rigidbody myRB;
     float min = 20f;
     float max = 40f;
@@ -19,6 +24,7 @@ public class FloatBox : MonoBehaviour
     bool dragged = false;
     void Awake()
     {
+        mat = gameObject.GetComponent<Renderer>();
         cam = GameObject.Find("MainCam").GetComponent<Camera>();
         CubeMask = LayerMask.GetMask("Float");
         myRB = gameObject.GetComponent<Rigidbody>();
@@ -30,34 +36,21 @@ public class FloatBox : MonoBehaviour
 
     private void Update()
     {
-       /* if (Input.GetButtonUp("Fire1"))
+      switch (color)
         {
-            if (placement)
-            {
-                try
-                {
-                    if (placement)
-                    {
+            case 0:
+                mat.material = red;
+                break;
+            case 1:
+                mat.material = blue;
+                break;
+            case 2:
+                mat.material = green;
+                break;
+            default:
+                break;
 
-                            gameObject.transform.position = parent.transform.position;
-                            myRB.constraints = RigidbodyConstraints.FreezePosition;
-                   
-                    }
-                }
-                catch
-                {
-
-                }
-               
-
-            }
-            else
-            {
-                transform.parent = null;
-                myRB.constraints = RigidbodyConstraints.None;
-                myRB.constraints = RigidbodyConstraints.FreezePositionZ;
-            }
-        }*/
+        }
     }
     void OnMouseDown()
     {
@@ -84,23 +77,7 @@ public class FloatBox : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("placement"))
-        {
-           // if (drag) { 
-              //  gameObject.transform.position = other.transform.position;
-            myRB.constraints = RigidbodyConstraints.FreezePosition;
-                gameObject.transform.position = other.transform.position;
-                placement = true;
-       // }
-            
-        }
-        else
-        {
-            placement = false;
-            transform.parent = null;
-            myRB.constraints = RigidbodyConstraints.None;
-            myRB.constraints = RigidbodyConstraints.FreezePositionZ;
-        }
+        
     }
     private void OnTriggerExit(Collider other)
     {

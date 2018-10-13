@@ -2,16 +2,46 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class placementObj : MonoBehaviour {
+public class placementObj : MonoBehaviour
+{
 
     public bool filled;
     public int color;
     public int placement;
-	
-	
-	
-	
-	void Update () {
-		
-	}
+    public GameObject occupyFloat;
+
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!filled) {
+            if (other.CompareTag("float"))
+            {
+                // if (drag) { 
+                //  gameObject.transform.position = other.transform.position;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+                other.gameObject.transform.position = transform.position;
+                filled = true;
+                color = other.gameObject.GetComponent<FloatBox>().color;
+    
+            // }
+
+            }
+            else
+            {
+
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("float"))
+        {
+            filled = false;
+
+        }
+    }
 }
