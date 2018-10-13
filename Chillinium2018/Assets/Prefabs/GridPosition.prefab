@@ -773,6 +773,7 @@ MonoBehaviour:
   - {fileID: 1236698943724976}
   - {fileID: 1329129038770638}
   - {fileID: 1659272356856754}
+  convergenceSpeed: 6
   spawner: {fileID: 114680752798875190, guid: c212cbbb84261254fa7185990ff70aca, type: 2}
 --- !u!114 &114443420648850626
 MonoBehaviour:

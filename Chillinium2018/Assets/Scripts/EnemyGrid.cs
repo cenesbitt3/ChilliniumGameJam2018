@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyGrid : MonoBehaviour {
 
     public GameObject[] places = new GameObject[9];
+    public float convergenceSpeed = 6.0f;
     bool isFilled;
 
     placementManger pmanger;
@@ -79,13 +80,22 @@ public class EnemyGrid : MonoBehaviour {
 
     public void Update()
     {
+        float step = convergenceSpeed * Time.deltaTime;
+
         if (passed) {
-            Destroy(this.gameObject);
+           
             GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
+            foreach (GameObject g in floats) {
+                Rigidbody rb = g.GetComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.None;
+                
+            }
             foreach (GameObject g in floats) {
                 Destroy(g);
             }
+            managerScript.atomExplosion.Play();
             Debug.Log("Time to create the next instructions");
+            Destroy(this.gameObject);
 
         }
 
@@ -94,8 +104,15 @@ public class EnemyGrid : MonoBehaviour {
             GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
             foreach (GameObject g in floats)
             {
-                Destroy(g);
+                Rigidbody rb = g.GetComponent<Rigidbody>();
+                rb.constraints = RigidbodyConstraints.None;
+                
             }
+             foreach (GameObject g in floats)
+            {
+               Destroy(g);
+            }
+            managerScript.atomExplosion.Play();
             // Bring up game over screen/restrt screen
         }
     }

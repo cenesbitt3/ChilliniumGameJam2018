@@ -5,7 +5,8 @@ using UnityEngine;
 public class Manager : MonoBehaviour {
 
     public Material[] mats = new Material[3];
-    public GameObject introText, posToCreate, ring;
+    public GameObject introText, posToCreate, ring, convergenceSpot;
+    public ParticleSystem atomExplosion;
 
     bool startOfGame = false;
     bool readyToPlay = false;
