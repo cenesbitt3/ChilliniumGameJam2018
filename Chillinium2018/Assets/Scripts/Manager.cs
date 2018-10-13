@@ -14,10 +14,16 @@ public class Manager : MonoBehaviour {
     public void Update()
     {
         if (!startOfGame) {
+            try
+            {
+                holderGameObject = Instantiate(introText, posToCreate.transform.position, posToCreate.transform.rotation);
+                holderGameObject.transform.parent = ring.transform;
+                startOfGame = true;
+            }
+            catch
+            {
 
-            holderGameObject = Instantiate(introText, posToCreate.transform.position, posToCreate.transform.rotation);
-            holderGameObject.transform.parent = ring.transform;
-            startOfGame = true;
+            }
         }
 
         if (Input.anyKeyDown) {
