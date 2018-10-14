@@ -30,6 +30,7 @@ public class EnemyGrid : MonoBehaviour {
     public Mesh sphere;
     public Mesh diamond;
     public Mesh yourMesh;
+    bool first = true;
 
     public void Awake()
     {
@@ -63,7 +64,15 @@ public class EnemyGrid : MonoBehaviour {
             }
             else if(filledChoice[i] != 1){
                 isFilled = true;
-                colorChoice[i] = Random.Range(0, 3);
+                if (pmanger.tutorialNum >= 18)
+                {
+                    colorChoice[i] = Random.Range(0, 3);
+                }
+                else
+                {
+                    colorChoice[i] = 1;
+                    pmanger.tutorialNum++;
+                }
                 switch (colorChoice[i])
                 {
                     case 0:
@@ -81,6 +90,7 @@ public class EnemyGrid : MonoBehaviour {
                 }
                 places[i].SetActive(true);
             }
+           // first = false;
             filled[i] = isFilled;
             MeshRenderer mesh = places[i].GetComponent<MeshRenderer>();
             TrailRenderer trail = places[i].GetComponent<TrailRenderer>();
@@ -109,8 +119,9 @@ public class EnemyGrid : MonoBehaviour {
                 
             }
         }
+        first = false;
         spawner.Spawn2();
-
+        
     }
     public void Explode()
     {
