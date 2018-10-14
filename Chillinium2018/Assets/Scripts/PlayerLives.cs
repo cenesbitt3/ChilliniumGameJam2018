@@ -6,13 +6,18 @@ public class PlayerLives : MonoBehaviour {
 
     public GameObject lifePos1, lifePos2, lifePos3, lifeObject;
     Manager managerScript;
+    ButtonManager buttonScript;
+    TimerCreation timerScript;
+    Score scoreScript;
+    public int lives = 3;
+    public bool dead = false;
 
     public void Awake()
     {
         managerScript = FindObjectOfType<Manager>();
-        Instantiate(lifeObject, lifePos1.transform.position, Quaternion.identity);
-        Instantiate(lifeObject, lifePos2.transform.position, Quaternion.identity);
-        Instantiate(lifeObject, lifePos3.transform.position, Quaternion.identity);
+        buttonScript = FindObjectOfType<ButtonManager>();
+        timerScript = FindObjectOfType<TimerCreation>();
+        scoreScript = FindObjectOfType<Score>();
 
     }
 
@@ -28,5 +33,21 @@ public class PlayerLives : MonoBehaviour {
                 Destroy(lifePos3.transform.Find("Atom"));
                 break;
         }
+    }
+
+    public void LoseLife() {
+        Debug.Log("We have enter Lose a life function");
+        if (lives <= 1)
+        {
+            dead = true;
+            timerScript.playerGrid.SetActive(false);
+            scoreScript.UpdateHighScore();
+            buttonScript.TurnOnGameOver();
+
+        }
+        else {
+            lives--;
+        }
+        Debug.Log("I have " + lives+ " left");
     }
 }

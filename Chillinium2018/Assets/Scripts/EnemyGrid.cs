@@ -18,6 +18,8 @@ public class EnemyGrid : MonoBehaviour {
     Manager managerScript;
     ButtonManager buttonManagerScript;
     PostProcesssorController hueScript;
+    Score scoreScript;
+    PlayerLives livesScript;
     int winNum;
     bool passed = false;
     bool failed = false;
@@ -30,6 +32,8 @@ public class EnemyGrid : MonoBehaviour {
         managerScript = FindObjectOfType<Manager>();
         buttonManagerScript = FindObjectOfType<ButtonManager>();
         hueScript = FindObjectOfType<PostProcesssorController>();
+        scoreScript = FindObjectOfType<Score>();
+        livesScript = FindObjectOfType<PlayerLives>();
         CreateInstructions();
         winNum = 0;
     }
@@ -109,8 +113,10 @@ public class EnemyGrid : MonoBehaviour {
             }
             managerScript.greenExplosion.Play();
             Debug.Log("Time to create the next instructions");
+
+            hueScript.AddToHue();
+            scoreScript.AddToScore();
             Destroy(this.gameObject);
-            hueScript.ChangeHueOnInt(hueChange);
 
         }
 
@@ -131,7 +137,7 @@ public class EnemyGrid : MonoBehaviour {
             managerScript.redExplosion.Play();
             Destroy(this.gameObject);
             // lose a life
-            managerScript.LoseLife();
+            livesScript.LoseLife();
         }
     }
 
