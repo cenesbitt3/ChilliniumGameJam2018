@@ -50,4 +50,8 @@ public class PlayerLives : MonoBehaviour {
         }
         Debug.Log("I have " + lives+ " left");
     }
+
+    public void GainLife() {
+        lives++;
+    }
 }
