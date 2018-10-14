@@ -7,6 +7,7 @@ public class EnemyGrid : MonoBehaviour {
     public GameObject[] places = new GameObject[9];
     public float convergenceSpeed = 6.0f;
     bool isFilled;
+    public GameObject atom, cube, diamond;
 
     placementManger pmanger;
 
@@ -61,25 +62,46 @@ public class EnemyGrid : MonoBehaviour {
                 colorChoice[i] = Random.Range(0, 3);
                 places[i].SetActive(true);
             }
+
+            switch (colorChoice[i])
+            {
+                case 0: // Red material
+                   
+                    places[i] = Instantiate(atom, places[i].transform.position, places[i].transform.rotation);
+                    break;
+                case 1: // Green material
+                    
+                    places[i] = Instantiate(cube, places[i].transform.position, places[i].transform.rotation);
+                    break;
+                case 2: // Blue material
+                   
+                    places[i] = Instantiate(diamond, places[i].transform.position, places[i].transform.rotation);
+                    break;
+            }
+
             filled[i] = isFilled;
             MeshRenderer mesh = places[i].GetComponent<MeshRenderer>();
             TrailRenderer trail = places[i].GetComponent<TrailRenderer>();
 
-            switch (colorChoice[i]) {
+            switch (colorChoice[i])
+            {
                 case 0: // Red material
                     mesh.material = managerScript.mats[0];
                     trail.material = managerScript.mats[0];
+                    
                     break;
                 case 1: // Green material
                     mesh.material = managerScript.mats[1];
                     trail.material = managerScript.mats[1];
+                    
                     break;
                 case 2: // Blue material
                     mesh.material = managerScript.mats[2];
                     trail.material = managerScript.mats[2];
+                   
                     break;
             }
-            
+
             EnemyPlacementManager enemyPlace = places[i].GetComponent<EnemyPlacementManager>();
             enemyPlace.FillValues(colorChoice[i], i, isFilled);
             if (isFilled)

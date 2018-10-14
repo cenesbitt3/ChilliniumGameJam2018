@@ -25,6 +25,7 @@ public class IntroText : MonoBehaviour {
             buttonManagerScript.instructionButton.SetActive(true);
             buttonManagerScript.quitButton.SetActive(true);
             buttonManagerScript.optionsButton.SetActive(true);
+            
             greenText.SetActive(true);
         }
         else if (other.gameObject.tag == "Destroyer") {

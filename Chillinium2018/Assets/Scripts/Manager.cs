@@ -40,6 +40,9 @@ public class Manager : MonoBehaviour {
                 buttonManagerScript.instructionButton.SetActive(false);
                 buttonManagerScript.quitButton.SetActive(false);
                 buttonManagerScript.optionsButton.SetActive(false);
+                buttonManagerScript.livesText.SetActive(true);
+                buttonManagerScript.heart.SetActive(true);
+                buttonManagerScript.slider.SetActive(true);
             }
         }
     }

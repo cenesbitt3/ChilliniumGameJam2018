@@ -115,6 +115,7 @@ MonoBehaviour:
   creationPosition: {fileID: 0}
   playerGrid: {fileID: 0}
   grid: {fileID: 1287701681555196, guid: fa6be9d42e7ac6a4e909377d44b230e3, type: 2}
+  trialGrid: {fileID: 1287701681555196, guid: 978999f59c04e5f498d2e1cc816d5df4, type: 2}
   ring: {fileID: 0}
 --- !u!114 &114789241804756362
 MonoBehaviour:
