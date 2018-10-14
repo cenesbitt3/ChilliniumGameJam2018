@@ -104,6 +104,7 @@ public class EnemyGrid : MonoBehaviour {
             Debug.Log("Time to create the next instructions");
             Destroy(this.gameObject);
 
+
         }
 
         if (failed) {
@@ -121,9 +122,9 @@ public class EnemyGrid : MonoBehaviour {
                Destroy(g);
             }
             managerScript.redExplosion.Play();
-            this.gameObject.SetActive(false);
-            // Game over screen
-            buttonManagerScript.TurnOnGameOver();
+            Destroy(this.gameObject);
+            // lose a life
+            managerScript.LoseLife();
         }
     }
 
