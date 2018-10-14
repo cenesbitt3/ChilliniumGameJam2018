@@ -108,6 +108,8 @@ GameObject:
   - component: {fileID: 20866570925242930}
   - component: {fileID: 81101393252993176}
   - component: {fileID: 114725255608727016}
+  - component: {fileID: 82651959300064204}
+  - component: {fileID: 114624045702397452}
   m_Layer: 0
   m_Name: MainCam
   m_TagString: MainCamera
@@ -191,8 +193,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1333244291233462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.475, y: -0.09, z: 11.04}
-  m_LocalScale: {x: 1.3841, y: 1.3841, z: 1.3841}
+  m_LocalPosition: {x: -0.475, y: -0.09, z: 10.51}
+  m_LocalScale: {x: 1.3841, y: 1.3841, z: 0.15482542}
   m_Children:
   - {fileID: 4800544662523824}
   m_Father: {fileID: 4238973935926984}
@@ -348,6 +350,118 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715227461839134}
   m_Enabled: 1
+--- !u!82 &82651959300064204
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715227461839134}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1a1e025731afda441aae26859dff147f, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &114624045702397452
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715227461839134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7490b496312055a40ad0ba34dd957f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newProfile:
+  - {fileID: 11400000, guid: 14eba79d1e73d28428d2dc26eeca96f2, type: 2}
+  - {fileID: 11400000, guid: 56b321d92b853dc4e910c21494a3c7e3, type: 2}
+  - {fileID: 11400000, guid: 20a825f02b7267c48ba190d31ad2d981, type: 2}
+  - {fileID: 11400000, guid: 37240ee903ae1d34991cbdd26da008f6, type: 2}
+  behavior: {fileID: 114725255608727016}
 --- !u!114 &114725255608727016
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1243,7 +1357,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 100
         minScalar: 0
         maxCurve:
           serializedVersion: 2
@@ -5833,7 +5947,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 30
+        scalar: 100
         minScalar: 0
         maxCurve:
           serializedVersion: 2

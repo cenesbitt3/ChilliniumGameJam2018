@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 114626073649383920}
   - component: {fileID: 114273716207828196}
   - component: {fileID: 114546521428021088}
+  - component: {fileID: 114852690115017366}
+  - component: {fileID: 114789241804756362}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -63,10 +65,6 @@ MonoBehaviour:
   convergenceSpot: {fileID: 0}
   redExplosion: {fileID: 0}
   greenExplosion: {fileID: 0}
-  lives:
-  - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
-  - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
-  - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
   postProcessors:
   - {fileID: 0}
   - {fileID: 0}
@@ -92,6 +90,13 @@ MonoBehaviour:
   exitCreditButton: {fileID: 0}
   gameOverScreen: {fileID: 0}
   restartButton: {fileID: 0}
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  blankScreen: {fileID: 0}
+  optionsButton: {fileID: 0}
+  otherHighScore: {fileID: 0}
+  resetButton: {fileID: 0}
+  exitOptionButton: {fileID: 0}
 --- !u!114 &114626073649383920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,3 +113,34 @@ MonoBehaviour:
   playerGrid: {fileID: 0}
   grid: {fileID: 1287701681555196, guid: fa6be9d42e7ac6a4e909377d44b230e3, type: 2}
   ring: {fileID: 0}
+--- !u!114 &114789241804756362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e74dc5cf1c844449ae6f703404a4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePos1: {fileID: 0}
+  lifePos2: {fileID: 0}
+  lifePos3: {fileID: 0}
+  lifeObject: {fileID: 0}
+  lives: 3
+  dead: 0
+--- !u!114 &114852690115017366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963ffca24895c2a42a90f13d3a433711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  highScore: {fileID: 0}
+  score: 0

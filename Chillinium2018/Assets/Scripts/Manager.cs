@@ -9,7 +9,7 @@ public class Manager : MonoBehaviour {
     public GameObject introText, posToCreate, ring, convergenceSpot;
     public ParticleSystem redExplosion, greenExplosion;
 
-    public List<GameObject> lives = new List<GameObject>();
+    
     public List<Component> postProcessors = new List<Component>();
 
     bool startOfGame = false;
@@ -40,20 +40,6 @@ public class Manager : MonoBehaviour {
                 buttonManagerScript.instructionButton.SetActive(false);
                 buttonManagerScript.quitButton.SetActive(false);
             }
-        }
-    }
-
-    public void LoseLife() {
-        if (lives.Count > 0)
-        {
-            //lifeScript.UpdateLives(lives.Count-1);
-            lives.RemoveAt(lives.Count - 1);
-            
-
-        }
-        else {
-            // player is dead
-            buttonManagerScript.TurnOnGameOver();
         }
     }
 

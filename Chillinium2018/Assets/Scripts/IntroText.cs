@@ -7,6 +7,8 @@ public class IntroText : MonoBehaviour {
     TimerCreation timerScript;
     ButtonManager buttonManagerScript;
 
+    public GameObject greenText;
+
     public void Awake()
     {
         managerScript = FindObjectOfType<Manager>();
@@ -22,9 +24,11 @@ public class IntroText : MonoBehaviour {
             managerScript.SetReadyToPlay(true);
             buttonManagerScript.instructionButton.SetActive(true);
             buttonManagerScript.quitButton.SetActive(true);
+            greenText.SetActive(true);
         }
         else if (other.gameObject.tag == "Destroyer") {
             Destroy(gameObject);
+            timerScript.playerGrid.SetActive(true);
             timerScript.SetReadyToSpawn(true);
         }
     }
