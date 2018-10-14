@@ -5,14 +5,10 @@ using UnityEngine;
 public class rotateRing : MonoBehaviour {
 
     public float RotationSpeed = 5f;
-	void Start () {
-		
-	}
+
 	
 	
 	void Update () {
         transform.Rotate(Vector3.right * (RotationSpeed * Time.deltaTime));
-        
-
     }
 }

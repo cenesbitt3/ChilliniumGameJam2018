@@ -29,7 +29,9 @@ public class FloatBox : MonoBehaviour
     public float force;
     bool raised = false;
     public LayerMask tileMask;
-    
+    public GameObject pObjSelected;
+    public GameObject lastpObjSelected;
+
     void Awake()
     {
         center = GameObject.Find("Center");
@@ -80,16 +82,24 @@ public class FloatBox : MonoBehaviour
         //placement = false;
         if (!raised)
         {
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
+            Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
+            //transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z);
+            Vector3 direction = curPosition - myRB.transform.position;
+            myRB.AddForce(direction.normalized *30f);
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z - 60f), 2f * Time.deltaTime);
             raised = true;
         }
     }
     private void OnMouseUp()
     {
+        
         drag = false;
         if (raised)
         {
-            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
+            transform.position = pObjSelected.transform.position;
+            myRB.constraints = RigidbodyConstraints.FreezePosition;
+            // transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
             raised = false;
         }
     }
@@ -101,13 +111,16 @@ public class FloatBox : MonoBehaviour
         RaycastHit hit;
              if (Physics.Raycast(transform.position, Vector3.forward, out hit, Mathf.Infinity, tileMask))
             {
-                hit.collider.gameObject.GetComponent<placementObj>().hover = true;
-                Debug.DrawRay(transform.position, -curPosition * hit.distance, Color.yellow);
-                Debug.Log("Did Hit");
+           
+                 pObjSelected = hit.collider.gameObject;
+                 hit.transform.SendMessage("HitByRay");
+
+                 Debug.DrawRay(transform.position, -curPosition * hit.distance, Color.yellow);
+                //Debug.Log("Did Hit");
         }
         else
         {
-            hit.collider.gameObject.GetComponent<placementObj>().hover = false;
+            //hit.collider.gameObject.GetComponent<placementObj>().hover = false;
         }
         // Vector3 direction =  curPosition-myRB.transform.position;
         //myRB.AddForce(direction.normalized *30f);
