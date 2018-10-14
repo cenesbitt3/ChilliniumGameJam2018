@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ButtonManager : MonoBehaviour {
     public GameObject instructionScreen, exitInstructionButton, creditsScreen, instructionButton, quitButton, creditsButton, exitCreditButton, gameOverScreen, restartButton;
     public GameObject scoreText, highScoreText, blankScreen, optionsButton, otherHighScore, resetButton, exitOptionButton;
+    public GameObject slider, heart, livesText;
     PlayerLives livesScript;
     Score scoreScript;
     PostProcesssorController processingScript;
@@ -24,6 +25,10 @@ public class ButtonManager : MonoBehaviour {
         creditsButton.SetActive(true);
         instructionButton.SetActive(false);
         quitButton.SetActive(false);
+        slider.SetActive(false);
+        heart.SetActive(false);
+        livesText.SetActive(false);
+        optionsButton.SetActive(false);
 
     }
 
@@ -34,7 +39,10 @@ public class ButtonManager : MonoBehaviour {
         creditsButton.SetActive(false);
         instructionButton.SetActive(true);
         quitButton.SetActive(true);
-
+        slider.SetActive(true);
+        heart.SetActive(true);
+        livesText.SetActive(true);
+        optionsButton.SetActive(true);
     }
 
     public void QuitGameButton() {
@@ -78,6 +86,7 @@ public class ButtonManager : MonoBehaviour {
         quitButton.SetActive(false);
         scoreText.SetActive(false);
         highScoreText.SetActive(false);
+        livesScript.UpdateText();
     }
 
     public void OptionsButton() {
@@ -85,9 +94,13 @@ public class ButtonManager : MonoBehaviour {
         optionsButton.SetActive(false);
         quitButton.SetActive(false);
         instructionButton.SetActive(false);
+        exitOptionButton.SetActive(true);
         resetButton.SetActive(true);
         otherHighScore.SetActive(true);
         blankScreen.SetActive(true);
+        slider.SetActive(false);
+        heart.SetActive(false);
+        livesText.SetActive(false);
 
     }
 
@@ -96,6 +109,7 @@ public class ButtonManager : MonoBehaviour {
         blankScreen.SetActive(false);
         resetButton.SetActive(false);
         otherHighScore.SetActive(false);
+        exitOptionButton.SetActive(false);
         optionsButton.SetActive(true);
         quitButton.SetActive(true);
         instructionButton.SetActive(true);
