@@ -12,8 +12,8 @@ public class FloatBox : MonoBehaviour
     public Material green;
     public Material blue;
     Rigidbody myRB;
-    float min = 20f;
-    float max = 40f;
+    float min = 60f;
+    float max = 100f;
     public Camera cam;
     public  bool drag = false;
     private Vector3 screenPoint;
@@ -31,9 +31,11 @@ public class FloatBox : MonoBehaviour
     public LayerMask tileMask;
     public GameObject pObjSelected;
     public GameObject lastpObjSelected;
+    placementManger Placementmanager;
 
     void Awake()
     {
+        Placementmanager = FindObjectOfType<placementManger>();
         center = GameObject.Find("Center");
         mat = gameObject.GetComponent<Renderer>();
         cam = GameObject.Find("MainCam").GetComponent<Camera>();
@@ -75,8 +77,19 @@ public class FloatBox : MonoBehaviour
     }
     void OnMouseDown()
     {
-        
-            stuck = false;
+        try
+        {
+            Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = 4;
+            Placementmanager.placment[pObjSelected.GetComponent<placementObj>().placement] = 0;
+            Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = false;
+        }
+        catch
+        {
+
+        }
+        myRB.constraints = RigidbodyConstraints.None;
+          myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+        stuck = false;
             screenPoint = cam.WorldToScreenPoint(transform.position);
             offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         //placement = false;
@@ -97,11 +110,40 @@ public class FloatBox : MonoBehaviour
         drag = false;
         if (raised)
         {
-            transform.position = pObjSelected.transform.position;
+            try
+            {
+                transform.position = pObjSelected.transform.position;
+            }
+            catch
+            {
+
+            }
             myRB.constraints = RigidbodyConstraints.FreezePosition;
+            if(Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] != null)
+            {
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] = gameObject;
+                Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = color;
+                Placementmanager.placment[pObjSelected.GetComponent<placementObj>().placement] = pObjSelected.GetComponent<placementObj>().placement;
+                Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = true;
+
+            }
+            else
+            {
+                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] = gameObject;
+                Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = color;
+                Placementmanager.placment[pObjSelected.GetComponent<placementObj>().placement] = pObjSelected.GetComponent<placementObj>().placement;
+                Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = true;
+
+            }
+            
             // transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
             raised = false;
         }
+
     }
     void OnMouseDrag()
     {
@@ -137,7 +179,7 @@ public class FloatBox : MonoBehaviour
        
     }
 
-    private void OnCollsionEnter(Collision other)
+  /*  private void OnCollsionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("wall"))
         {
@@ -145,7 +187,7 @@ public class FloatBox : MonoBehaviour
             
             transform.position = Vector3.Lerp(transform.position, center.transform.position, 500f * Time.deltaTime);
         }
-    }
+    }*/
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("wall"))
