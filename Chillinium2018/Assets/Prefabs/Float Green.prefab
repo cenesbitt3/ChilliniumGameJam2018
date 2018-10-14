@@ -85,7 +85,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507816747948564}
-  m_Mesh: {fileID: 4300000, guid: a3034790a942a66438fe24e44d5bf7f7, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 2b1f834637464e14f8d530c5d7967d4c, type: 3}
 --- !u!54 &54403991003205740
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -126,6 +126,8 @@ MonoBehaviour:
     m_Bits: 1024
   pObjSelected: {fileID: 0}
   lastpObjSelected: {fileID: 0}
+  connectPrefab: {fileID: 1073330511524680, guid: a6030f92b14a5da458c7d9da736d0f8f,
+    type: 2}
 --- !u!135 &135822726109844036
 SphereCollider:
   m_ObjectHideFlags: 1

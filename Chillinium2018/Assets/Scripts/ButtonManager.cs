@@ -18,7 +18,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void InstructionsButton() {
-        Time.timeScale = 0f;
+       // Time.timeScale = 0f;
         instructionScreen.SetActive(true);
         exitInstructionButton.SetActive(true);
         creditsButton.SetActive(true);
@@ -28,7 +28,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void ExitInstructions() {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         instructionScreen.SetActive(false);
         exitInstructionButton.SetActive(false);
         creditsButton.SetActive(false);
@@ -56,7 +56,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void TurnOnGameOver() {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         gameOverScreen.gameObject.SetActive(true);
         restartButton.SetActive(true);
         quitButton.SetActive(true);
@@ -66,7 +66,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void RestartButton() {
-        Time.timeScale = 1f;
+        //Time.timeScale = 1f;
         processingScript.hueChnage = 0;
         processingScript.ChangeHueProfileOne();
         scoreScript.score = 0;
@@ -81,7 +81,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void OptionsButton() {
-        Time.timeScale = 0f;
+       // Time.timeScale = 0f;
         optionsButton.SetActive(false);
         quitButton.SetActive(false);
         instructionButton.SetActive(false);
@@ -92,7 +92,7 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void ExitOptionsButton() {
-        Time.timeScale = 1f;
+       // Time.timeScale = 1f;
         blankScreen.SetActive(false);
         resetButton.SetActive(false);
         otherHighScore.SetActive(false);
