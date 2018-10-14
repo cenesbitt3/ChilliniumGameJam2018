@@ -8,6 +8,7 @@ public class Manager : MonoBehaviour {
     public Material[] mats = new Material[3];
     public GameObject introText, posToCreate, ring, convergenceSpot;
     public ParticleSystem redExplosion, greenExplosion;
+   
 
     
     public List<Component> postProcessors = new List<Component>();

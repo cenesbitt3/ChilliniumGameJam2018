@@ -9,6 +9,8 @@ public class rotateRing : MonoBehaviour {
 	
 	
 	void Update () {
-        transform.Rotate(Vector3.right * (RotationSpeed * Time.deltaTime));
+
+       // GameObject[] atoms = GameObject.FindGameObjectsWithTag("float");
+        transform.Rotate(Vector3.right * ((RotationSpeed) * Time.deltaTime));
     }
 }

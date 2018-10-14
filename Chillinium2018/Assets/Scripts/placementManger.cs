@@ -9,6 +9,7 @@ public class placementManger : MonoBehaviour {
     public int[] colors;
     public bool[] filled;
     public int[] placment;
+    public int tutorialNum;
     private void Update()
     {
      /*   for(int i =0; i < placmentObjects.Length;i++)

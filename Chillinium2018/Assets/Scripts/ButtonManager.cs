@@ -34,6 +34,11 @@ public class ButtonManager : MonoBehaviour {
 
     }
 
+    public void OtherHighScore() {
+        Text text = otherHighScore.GetComponent<Text>();
+        text.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0);
+    }
+
     public void ExitInstructions() {
         //Time.timeScale = 1f;
         instructionScreen.SetActive(false);
@@ -94,7 +99,8 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void OptionsButton() {
-       // Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        OtherHighScore();
         optionsButton.SetActive(false);
         quitButton.SetActive(false);
         instructionButton.SetActive(false);
