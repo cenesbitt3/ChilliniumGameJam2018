@@ -19,7 +19,7 @@ public class Score : MonoBehaviour {
     public void AddToScore() {
         score++;
         UpdateText();
-        powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
+       // powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
         Debug.Log("Score: " + score);
     }
 	
