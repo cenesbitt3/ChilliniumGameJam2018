@@ -23,6 +23,7 @@ public class EnemyGrid : MonoBehaviour {
     int winNum;
     bool passed = false;
     bool failed = false;
+    bool changeScore = true;
     int hueChange = -1;
     public GameObject plane;
 
@@ -108,7 +109,7 @@ public class EnemyGrid : MonoBehaviour {
         Debug.Log("Time to create the next instructions");
 
         hueScript.AddToHue();
-        scoreScript.AddToScore();
+        
         Destroy(this.gameObject);
     }
     public void Update()
@@ -143,6 +144,11 @@ public class EnemyGrid : MonoBehaviour {
                
                 
             }
+            if (changeScore) {
+                scoreScript.AddToScore();
+                changeScore = false;
+            }
+
             foreach (GameObject g in floats) {
                 Destroy(g,3f);
             }
@@ -189,6 +195,7 @@ public class EnemyGrid : MonoBehaviour {
             if (winNum == 9)
             {
                 passed = true;
+                changeScore = true;
                 //Debug.Log(" true");
             }
             else

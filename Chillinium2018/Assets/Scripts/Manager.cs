@@ -39,6 +39,7 @@ public class Manager : MonoBehaviour {
                 holderGameObject.transform.parent = ring.transform;
                 buttonManagerScript.instructionButton.SetActive(false);
                 buttonManagerScript.quitButton.SetActive(false);
+                buttonManagerScript.optionsButton.SetActive(false);
             }
         }
     }

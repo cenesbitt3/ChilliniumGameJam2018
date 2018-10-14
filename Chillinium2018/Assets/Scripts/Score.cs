@@ -18,25 +18,12 @@ public class Score : MonoBehaviour {
         livesScript = FindObjectOfType<PlayerLives>();
     }
 
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            powerSlider.value += 20;
-            if (powerSlider.value >= 100)
-            {
-                // increase a life
-                livesScript.GainLife();
-                powerSlider.value = 0;
-            }
-        }
-    }
-
     // Use this for initialization
     public void AddToScore() {
         powerSlider.value += 20;
         score++;
         UpdateText();
-        powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
+        //powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
         Debug.Log("Score: " + score);
     }
 	
@@ -54,8 +41,4 @@ public class Score : MonoBehaviour {
 }
 
 
-        if (powerSlider.value == 100) {
-            // increase a life
-            livesScript.GainLife();
-            powerSlider.value = 0;
-        }
+     

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class PlayerLives : MonoBehaviour {
     Score scoreScript;
     public int lives = 1;
     public bool dead = false;
+    public Text numLives;
 
     public void Awake()
     {
@@ -21,18 +23,8 @@ public class PlayerLives : MonoBehaviour {
 
     }
 
-    public void UpdateLives(int position) {
-        switch (position) {
-            case 0:
-                Destroy(lifePos1.transform.Find("Atom"));
-                break;
-            case 1:
-                Destroy(lifePos2.transform.Find("Atom"));
-                break;
-            case 2:
-                Destroy(lifePos3.transform.Find("Atom"));
-                break;
-        }
+    public void UpdateText() {
+        numLives.text = "x : " + lives;
     }
 
     public void LoseLife() {
@@ -49,9 +41,11 @@ public class PlayerLives : MonoBehaviour {
             lives--;
         }
         Debug.Log("I have " + lives+ " left");
+        UpdateText();
     }
 
     public void GainLife() {
         lives++;
+        UpdateText();
     }
 }
