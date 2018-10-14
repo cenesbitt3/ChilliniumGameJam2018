@@ -10,12 +10,14 @@ public class ButtonManager : MonoBehaviour {
     PlayerLives livesScript;
     Score scoreScript;
     PostProcesssorController processingScript;
+    TimerCreation timerScriprt;
 
     public void Awake()
     {
         livesScript = FindObjectOfType<PlayerLives>();
         scoreScript = FindObjectOfType<Score>();
         processingScript = FindObjectOfType<PostProcesssorController>();
+        timerScriprt = FindObjectOfType<TimerCreation>();
     }
 
     public void InstructionsButton() {
@@ -75,6 +77,7 @@ public class ButtonManager : MonoBehaviour {
         quitButton.SetActive(true);
         scoreText.SetActive(true);
         highScoreText.SetActive(true);
+        timerScriprt.playerGrid.SetActive(false);
 
     }
 
@@ -92,6 +95,7 @@ public class ButtonManager : MonoBehaviour {
         scoreText.SetActive(false);
         highScoreText.SetActive(false);
         livesScript.UpdateText();
+        timerScriprt.playerGrid.SetActive(false);
     }
 
     public void OptionsButton() {

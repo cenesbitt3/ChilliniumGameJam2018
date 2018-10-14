@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class Manager : MonoBehaviour {
@@ -8,8 +9,10 @@ public class Manager : MonoBehaviour {
     public Material[] mats = new Material[3];
     public GameObject introText, posToCreate, ring, convergenceSpot;
     public ParticleSystem redExplosion, greenExplosion;
-   
-
+    public Animator anim;
+    public AudioClip beginSong;
+    public AudioClip GameOver;
+    public AudioClip Main;
     
     public List<Component> postProcessors = new List<Component>();
 
@@ -18,6 +21,7 @@ public class Manager : MonoBehaviour {
     GameObject holderGameObject;
     ButtonManager buttonManagerScript;
     PlayerLives lifeScript;
+    public GameObject cam;
 
     public void Awake()
     {
@@ -44,6 +48,9 @@ public class Manager : MonoBehaviour {
                 buttonManagerScript.livesText.SetActive(true);
                 buttonManagerScript.heart.SetActive(true);
                 buttonManagerScript.slider.SetActive(true);
+                anim.SetBool("GO", true);
+                cam.GetComponent<AudioSource>().clip = Main;
+                cam.GetComponent<AudioSource>().Play();
             }
         }
     }

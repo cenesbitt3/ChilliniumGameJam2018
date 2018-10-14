@@ -7,6 +7,8 @@ public class EnemyGrid : MonoBehaviour {
     public GameObject[] places = new GameObject[9];
     public float convergenceSpeed = 6.0f;
     bool isFilled;
+    public AudioClip goodExplode;
+    public AudioClip badExplode;
 
     placementManger pmanger;
 
@@ -31,9 +33,11 @@ public class EnemyGrid : MonoBehaviour {
     public Mesh diamond;
     public Mesh yourMesh;
     bool first = true;
+    public GameObject Cam;
 
     public void Awake()
     {
+        Cam = GameObject.Find("MainCam");
         yourMesh = gameObject.GetComponent<Mesh>();
         spawner = FindObjectOfType<Spawner>();
         pmanger = FindObjectOfType<placementManger>();
@@ -125,6 +129,7 @@ public class EnemyGrid : MonoBehaviour {
     }
     public void Explode()
     {
+
         GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
         foreach (GameObject g in floats)
         {
@@ -137,6 +142,8 @@ public class EnemyGrid : MonoBehaviour {
             Destroy(g, .5f);
         }
         managerScript.greenExplosion.Play();
+        Cam.GetComponent<AudioSource>().PlayOneShot(goodExplode, 2f);
+
        // Debug.Log("Time to create the next instructions");
 
         hueScript.AddToHue();
@@ -168,7 +175,14 @@ public class EnemyGrid : MonoBehaviour {
                 {
 
                 }
-                rb.gameObject.GetComponent<SphereCollider>().radius = .4f;
+                try
+                {
+                    rb.gameObject.GetComponent<SphereCollider>().radius = .4f;
+                }
+                catch
+                {
+
+                }
                 Vector3 direction = transform.position - rb.gameObject.transform.position;
                 rb.AddForce(direction.normalized * 20, ForceMode.Impulse);
                 Invoke("Explode", 1f);
@@ -202,6 +216,7 @@ public class EnemyGrid : MonoBehaviour {
                Destroy(g);
             }
             managerScript.redExplosion.Play();
+            Cam.GetComponent<AudioSource>().PlayOneShot(badExplode, 2f);
             Destroy(this.gameObject);
             // lose a life
             livesScript.LoseLife();
