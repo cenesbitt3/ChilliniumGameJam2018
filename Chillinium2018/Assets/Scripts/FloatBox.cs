@@ -33,6 +33,8 @@ public class FloatBox : MonoBehaviour
     public GameObject lastpObjSelected;
     placementManger Placementmanager;
     public GameObject connectPrefab;
+    public AudioClip drop;
+    public AudioClip grab;
 
     void Awake()
     {
