@@ -21,16 +21,11 @@ public class Manager : MonoBehaviour {
     public void Update()
     {
         if (!startOfGame) {
-            try
-            {
+            
                 holderGameObject = Instantiate(introText, posToCreate.transform.position, posToCreate.transform.rotation);
                 holderGameObject.transform.parent = ring.transform;
                 startOfGame = true;
-            }
-            catch
-            {
-
-            }
+           
         }
 
         if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse1) && !Input.GetKeyDown(KeyCode.Mouse2)) {
