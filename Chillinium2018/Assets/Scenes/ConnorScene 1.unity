@@ -582,6 +582,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -1260
+      objectReference: {fileID: 0}
+    - target: {fileID: 224704684120269464, guid: bbef3c105c8de344ebf4801b9006f7df,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -709
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbef3c105c8de344ebf4801b9006f7df, type: 2}
   m_IsPrefabAsset: 0

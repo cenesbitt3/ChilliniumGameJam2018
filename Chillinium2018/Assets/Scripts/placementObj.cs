@@ -42,7 +42,7 @@ public class placementObj : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!filled) {
+       
             if (other.CompareTag("float"))
             {
              //   Vector3 direction = -gameObject.transform.position + other.GetComponent<Rigidbody>().transform.position;
@@ -62,7 +62,7 @@ public class placementObj : MonoBehaviour
            //     other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
               //  other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             }
-        }
+        
     }
     private void OnTriggerExit(Collider other)
     {

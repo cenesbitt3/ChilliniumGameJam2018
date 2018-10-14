@@ -10,7 +10,7 @@ public class EnemyGrid : MonoBehaviour {
 
     placementManger pmanger;
 
-    int[] colorChoice = new int[9];
+    public int[] colorChoice = new int[9];
     int[] filledChoice = new int[9];
     bool[] filled = new bool[9];
     GameObject shape;
@@ -54,16 +54,20 @@ public class EnemyGrid : MonoBehaviour {
             }
             filled[i] = isFilled;
             MeshRenderer mesh = places[i].GetComponent<MeshRenderer>();
+            TrailRenderer trail = places[i].GetComponent<TrailRenderer>();
 
             switch (colorChoice[i]) {
                 case 0: // Red material
                     mesh.material = managerScript.mats[0];
+                    trail.material = managerScript.mats[0];
                     break;
                 case 1: // Green material
                     mesh.material = managerScript.mats[1];
+                    trail.material = managerScript.mats[1];
                     break;
                 case 2: // Blue material
                     mesh.material = managerScript.mats[2];
+                    trail.material = managerScript.mats[2];
                     break;
             }
             
