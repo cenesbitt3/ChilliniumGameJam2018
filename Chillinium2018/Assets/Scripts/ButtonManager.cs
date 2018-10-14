@@ -44,9 +44,9 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void TurnOnGameOver() {
-        gameOverScreen.gameObject.SetActive(true);
-        restartButton.SetActive(true);
-        quitButton.SetActive(true);
+      //  gameOverScreen.gameObject.SetActive(true);
+     //   restartButton.SetActive(true);
+    //    quitButton.SetActive(true);
 
     }
 

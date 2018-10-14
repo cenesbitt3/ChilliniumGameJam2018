@@ -5,55 +5,57 @@ using UnityEngine;
 public class placementObj : MonoBehaviour
 {
     public Camera cam;
-    public bool filled;
+    public bool filled = false;
     public int color;
     public int placement;
     public GameObject occupyFloat;
     private Vector3 screenPoint;
     private Vector3 offset;
     bool stuck = true;
-    bool hover = false;
+   public bool hover = false;
     bool cando = false;
-    
+    Collider col;
+    public Material firstMat;
+    public Material secondMat;
+    public Material thirdMat;
+     
 
     private void Awake()
     {
         color = 4;
         cam = GameObject.Find("MainCam").GetComponent<Camera>();
+        col = GetComponent<Collider>();
     }
     private void Update()
     {
-        
+        if (hover)
+        {
+            gameObject.GetComponent<Renderer>().material = secondMat;
+        }
+        else
+        {
+            gameObject.GetComponent<Renderer>().material = firstMat;
+        }
     }
-    /*   private void Update()
-       {
-           screenPoint = cam.WorldToScreenPoint(transform.position);
-           offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-           Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
-           Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
-           if (filled)
-
-           {
-              if ( Vector3.Distance(transform.position, curPosition) >= 1f){
-                   stuck = true;
-               }
-           }
-       }*/
+    
 
     private void OnTriggerEnter(Collider other)
     {
-       
+        if (filled)
+        {
+            return;
+        }
+
+
             if (other.CompareTag("float"))
             {
              //   Vector3 direction = -gameObject.transform.position + other.GetComponent<Rigidbody>().transform.position;
-//other.GetComponent<Rigidbody>().AddForce(direction.normalized * 500f);
-                  hover = true;
+            //other.GetComponent<Rigidbody>().AddForce(direction.normalized * 500f);
+                  
                    //other.transform.position = gameObject.transform.position;
                   
-                filled = true;
+               // filled = true;
                     color = other.gameObject.GetComponent<FloatBox>().color;
-
-                
 
             }
             else
@@ -68,10 +70,18 @@ public class placementObj : MonoBehaviour
     {
         if (other.CompareTag("float"))
         {
-            hover = false;
+           
             color = 4;
-            //filled = false;
+            filled = false;
         }
+    }
+    public void Hover()
+    {
+        gameObject.GetComponent<Renderer>().material = secondMat;
+    }
+    public void Taken()
+    {
+
     }
     
 }

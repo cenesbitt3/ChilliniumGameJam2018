@@ -27,6 +27,9 @@ public class FloatBox : MonoBehaviour
     bool stuck;
     public GameObject pObject;
     public float force;
+    bool raised = false;
+    public LayerMask tileMask;
+    
     void Awake()
     {
         center = GameObject.Find("Center");
@@ -57,41 +60,61 @@ public class FloatBox : MonoBehaviour
                 break;
 
         }
-        if (!stuck)
+        if (drag)
+        {
+            //gameObject.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - 2);
+        }
+    /*    if (!stuck)
         {
             myRB.constraints = RigidbodyConstraints.None;
               myRB.constraints = RigidbodyConstraints.FreezePositionZ;
-        }
+        }*/
         
     }
     void OnMouseDown()
     {
-        if (!col)
-        {
+        
             stuck = false;
             screenPoint = cam.WorldToScreenPoint(transform.position);
             offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-            placement = false;
+        //placement = false;
+        if (!raised)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z - 60f), 2f * Time.deltaTime);
+            raised = true;
         }
-     
-
     }
     private void OnMouseUp()
     {
         drag = false;
-
+        if (raised)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
+            raised = false;
+        }
     }
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
-        if (!col)
-        {
-
-            Vector3 direction =  curPosition-myRB.transform.position;
-            myRB.AddForce(direction.normalized * Vector3.Distance(curPosition,gameObject.transform.position)*30f);
-           // transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
+        transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z );
+        RaycastHit hit;
+             if (Physics.Raycast(transform.position, -curPosition, out hit, Mathf.Infinity, tileMask))
+            {
+                hit.collider.gameObject.GetComponent<placementObj>().hover = true;
+                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.Log("Did Hit");
         }
+        else
+        {
+            hit.collider.gameObject.GetComponent<placementObj>().hover = false;
+        }
+        // Vector3 direction =  curPosition-myRB.transform.position;
+        //myRB.AddForce(direction.normalized *30f);
+        //myRB.velocity = Vector3.zero;
+        //  transform.position = Vector3.Lerp(transform.position, curPosition, 50f * Time.deltaTime);
+
+
         drag = true;
         placement = false;
         if(stuck && Vector3.Distance(transform.position, pObject.transform.position) >1f)
@@ -142,24 +165,32 @@ public class FloatBox : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Float box on trigger enter");
         if (other.CompareTag("placement"))
         {
-            if (!drag) { 
-           
-                stuck = true;
+            placementObj place = other.gameObject.GetComponent<placementObj>();
+            Debug.Log("What is place filled" + place.filled);
+            if (place.filled)
+            {
+                //return;
+            }
+            // if (place.filled) { 
+
+            stuck = true;
                 pObject = other.gameObject;
                 stuckOnPlace(other.gameObject);
-            }
+           // }
         }
     }
     
     
-    void stuckOnPlace(GameObject placementObj)
+    void stuckOnPlace(GameObject pObj)
     {
-        if (stuck)
+        if (stuck&&!drag)
         {
+            pObj.GetComponent<placementObj>().filled = true;
             myRB.constraints = RigidbodyConstraints.FreezePosition;
-            gameObject.transform.position = placementObj.transform.position;
+            gameObject.transform.position = pObj.transform.position;
         }
     }
     }
