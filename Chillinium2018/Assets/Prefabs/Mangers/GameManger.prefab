@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1270133521288718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.13, y: -8.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,9 @@ MonoBehaviour:
   otherHighScore: {fileID: 0}
   resetButton: {fileID: 0}
   exitOptionButton: {fileID: 0}
+  slider: {fileID: 0}
+  heart: {fileID: 0}
+  livesText: {fileID: 0}
 --- !u!114 &114626073649383920
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,8 +131,9 @@ MonoBehaviour:
   lifePos2: {fileID: 0}
   lifePos3: {fileID: 0}
   lifeObject: {fileID: 0}
-  lives: 3
+  lives: 1
   dead: 0
+  numLives: {fileID: 0}
 --- !u!114 &114852690115017366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,3 +148,4 @@ MonoBehaviour:
   scoreText: {fileID: 0}
   highScore: {fileID: 0}
   score: 0
+  powerSlider: {fileID: 0}
