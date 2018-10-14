@@ -11,6 +11,7 @@ public class energyBar : MonoBehaviour {
 
     public void Start()
     {
+
          newColor = fill.GetComponent<Image>().color;
     }
 

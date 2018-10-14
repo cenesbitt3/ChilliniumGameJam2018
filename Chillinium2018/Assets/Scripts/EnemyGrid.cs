@@ -26,9 +26,14 @@ public class EnemyGrid : MonoBehaviour {
     bool changeScore = true;
     int hueChange = -1;
     public GameObject plane;
+    public Mesh square;
+    public Mesh sphere;
+    public Mesh diamond;
+    public Mesh yourMesh;
 
     public void Awake()
     {
+        yourMesh = gameObject.GetComponent<Mesh>();
         spawner = FindObjectOfType<Spawner>();
         pmanger = FindObjectOfType<placementManger>();
         managerScript = FindObjectOfType<Manager>();
@@ -59,6 +64,21 @@ public class EnemyGrid : MonoBehaviour {
             else if(filledChoice[i] != 1){
                 isFilled = true;
                 colorChoice[i] = Random.Range(0, 3);
+                switch (colorChoice[i])
+                {
+                    case 0:
+                        gameObject.transform.GetChild(i).GetComponent<MeshFilter>().mesh = diamond;
+                        break;
+                    case 1:
+                        gameObject.transform.GetChild(i).GetComponent<MeshFilter>().mesh = sphere;
+                        break;
+                    case 2:
+                        gameObject.transform.GetChild(i).GetComponent<MeshFilter>().mesh = square;
+                        break;
+                    default:
+                        break;
+
+                }
                 places[i].SetActive(true);
             }
             filled[i] = isFilled;
@@ -106,7 +126,7 @@ public class EnemyGrid : MonoBehaviour {
             Destroy(g, .5f);
         }
         managerScript.greenExplosion.Play();
-        Debug.Log("Time to create the next instructions");
+       // Debug.Log("Time to create the next instructions");
 
         hueScript.AddToHue();
         

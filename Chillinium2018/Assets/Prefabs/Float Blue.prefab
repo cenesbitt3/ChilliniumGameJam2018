@@ -128,6 +128,9 @@ MonoBehaviour:
   lastpObjSelected: {fileID: 0}
   connectPrefab: {fileID: 1073330511524680, guid: a6030f92b14a5da458c7d9da736d0f8f,
     type: 2}
+  grab: {fileID: 8300000, guid: 052842531c7b8034b8c7538051c9edb3, type: 3}
+  drop: {fileID: 8300000, guid: 101a95c61cda6d3419d04cf1f0d13991, type: 3}
+  source: {fileID: 0}
 --- !u!135 &135737179334011448
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -138,5 +141,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
