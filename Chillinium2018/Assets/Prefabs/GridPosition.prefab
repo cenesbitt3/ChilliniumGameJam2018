@@ -1983,6 +1983,10 @@ MonoBehaviour:
   colorChoice: 000000000000000000000000000000000000000000000000000000000000000000000000
   spawner: {fileID: 114680752798875190, guid: c212cbbb84261254fa7185990ff70aca, type: 2}
   plane: {fileID: 1963221535593696}
+  square: {fileID: 4300000, guid: 498c36c1c586a5b40b7d0ef4ef3caca1, type: 3}
+  sphere: {fileID: 4300000, guid: 224cc4ffd785426488438031c3ea7bdc, type: 3}
+  diamond: {fileID: 4300000, guid: a3034790a942a66438fe24e44d5bf7f7, type: 3}
+  yourMesh: {fileID: 0}
 --- !u!114 &114581131947691458
 MonoBehaviour:
   m_ObjectHideFlags: 1

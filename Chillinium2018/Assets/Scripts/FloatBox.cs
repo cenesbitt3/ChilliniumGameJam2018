@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class FloatBox : MonoBehaviour
@@ -33,11 +34,14 @@ public class FloatBox : MonoBehaviour
     public GameObject lastpObjSelected;
     placementManger Placementmanager;
     public GameObject connectPrefab;
-    public AudioClip drop;
+   // public AudioClip drop;
     public AudioClip grab;
+    public AudioClip drop;
+    public AudioSource source;
 
     void Awake()
     {
+        source = GameObject.Find("MainCam").GetComponent<AudioSource>();
         Placementmanager = FindObjectOfType<placementManger>();
         center = GameObject.Find("Center");
         mat = gameObject.GetComponent<Renderer>();
@@ -99,6 +103,7 @@ public class FloatBox : MonoBehaviour
     }
     void OnMouseDown()
     {
+        
         try
         {
             Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = 4;
@@ -125,11 +130,11 @@ public class FloatBox : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z - 60f), 2f * Time.deltaTime);
             raised = true;
         }
-        
+        source.PlayOneShot(grab, 2f);
     }
     private void OnMouseUp()
     {
-        
+        source.PlayOneShot(drop, 2f);
         drag = false;
         if (raised)
         {
@@ -139,19 +144,29 @@ public class FloatBox : MonoBehaviour
             }
             catch
             {
-
+                
+                transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
+                if(gameObject.transform.position.z > 10.7f)
+                {
+                    raised = false;
+                    transform.position = new Vector3(transform.position.x, transform.position.y, 10.7f);
+                }
             }
             myRB.constraints = RigidbodyConstraints.FreezePosition;
             if(Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] != null)
             {
-                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
-                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
-                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
-                Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] = gameObject;
-                Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = color;
-                Placementmanager.placment[pObjSelected.GetComponent<placementObj>().placement] = pObjSelected.GetComponent<placementObj>().placement;
-                Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = true;
+                if (gameObject != Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement])
+                {
+                    Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+                    Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+                    Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement].GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                }
+                    Placementmanager.housedAtoms[pObjSelected.GetComponent<placementObj>().placement] = gameObject;
+                    Placementmanager.colors[pObjSelected.GetComponent<placementObj>().placement] = color;
+                    Placementmanager.placment[pObjSelected.GetComponent<placementObj>().placement] = pObjSelected.GetComponent<placementObj>().placement;
+                    Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = true;
+                
 
             }
             else
@@ -162,8 +177,8 @@ public class FloatBox : MonoBehaviour
                 Placementmanager.filled[pObjSelected.GetComponent<placementObj>().placement] = true;
 
             }
-            
-            // transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z + 60f), 2f * Time.deltaTime);
+
+
             raised = false;
         }
 

@@ -72,4 +72,40 @@ public class Spawner : MonoBehaviour {
         // Clear the list
         referenceToPlace.Clear();
     }
+    public void Spawn3()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            pManger.colors[i] = 4;
+            pManger.filled[i] = false;
+
+        }
+        for (int i = 0; i < referenceToPlace.Count; i++)
+        {
+            EnemyPlacementManager enemyPlace = referenceToPlace[i].GetComponent<EnemyPlacementManager>();
+            switch (enemyPlace.GetColor())
+            {
+                case 0:
+                    holderGameObject = Instantiate(AtomPrefabRed, Center.transform.position, AtomPrefabRed.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    //holderGameObject = Instantiate(AtomPrefabRed, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabRed.transform.rotation);
+                    break;
+                case 1:
+                    holderGameObject = Instantiate(AtomPrefabRed, Center.transform.position, AtomPrefabRed.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    // holderGameObject = Instantiate(AtomPrefabGreen, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabGreen.transform.rotation);
+                    break;
+                case 2:
+                    holderGameObject = Instantiate(AtomPrefabRed, Center.transform.position, AtomPrefabRed.transform.rotation);
+                    holderGameObject.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    holderGameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(min, max), Random.Range(min, max), Random.Range(min, max)));
+                    // holderGameObject = Instantiate(AtomPrefabBlue, new Vector3(Random.Range(-4, 4), Random.Range(-6, -12), 10.5f), AtomPrefabBlue.transform.rotation);
+                    break;
+            }
+        }
+        // Clear the list
+        referenceToPlace.Clear();
+    }
 }

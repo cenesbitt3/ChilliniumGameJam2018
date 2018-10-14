@@ -85,7 +85,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507816747948564}
-  m_Mesh: {fileID: 4300000, guid: 2b1f834637464e14f8d530c5d7967d4c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 224cc4ffd785426488438031c3ea7bdc, type: 3}
 --- !u!54 &54403991003205740
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -128,6 +128,9 @@ MonoBehaviour:
   lastpObjSelected: {fileID: 0}
   connectPrefab: {fileID: 1073330511524680, guid: a6030f92b14a5da458c7d9da736d0f8f,
     type: 2}
+  grab: {fileID: 8300000, guid: 052842531c7b8034b8c7538051c9edb3, type: 3}
+  drop: {fileID: 8300000, guid: 101a95c61cda6d3419d04cf1f0d13991, type: 3}
+  source: {fileID: 0}
 --- !u!135 &135822726109844036
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -138,5 +141,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3
+  m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
