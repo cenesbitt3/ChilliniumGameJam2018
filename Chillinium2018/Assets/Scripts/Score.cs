@@ -8,18 +8,40 @@ public class Score : MonoBehaviour {
     public Text scoreText;
     public Text highScore;
     public int score = 0;
-    public GameObject powerBar;
+    public Slider powerSlider;
+
+    PlayerLives livesScript;
 
     public void Start()
     {
         highScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+        livesScript = FindObjectOfType<PlayerLives>();
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            powerSlider.value += 20;
+            if (powerSlider.value >= 100)
+            {
+                // increase a life
+                livesScript.GainLife();
+                powerSlider.value = 0;
+            }
+        }
     }
 
     // Use this for initialization
     public void AddToScore() {
+        powerSlider.value += 20;
         score++;
         UpdateText();
-        powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
+
+        if (powerSlider.value == 100) {
+            // increase a life
+            livesScript.GainLife();
+            powerSlider.value = 0;
+        }
         Debug.Log("Score: " + score);
     }
 	
