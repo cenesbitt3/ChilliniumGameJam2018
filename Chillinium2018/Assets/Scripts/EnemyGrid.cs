@@ -146,9 +146,9 @@ public class EnemyGrid : MonoBehaviour {
                 if (pmanger.colors[i] == colorChoice[i])
                 {
                     winNum++;
-                   // Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+                    Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
                 }
-               // Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+                Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
             }
             if (winNum == 9)
             {

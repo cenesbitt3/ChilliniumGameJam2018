@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 114626073649383920}
   - component: {fileID: 114273716207828196}
   - component: {fileID: 114546521428021088}
-  - component: {fileID: 114757961045085084}
   m_Layer: 0
   m_Name: GameManger
   m_TagString: Untagged
@@ -68,6 +67,11 @@ MonoBehaviour:
   - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
   - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
   - {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}
+  postProcessors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114546521428021088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,18 +108,3 @@ MonoBehaviour:
   playerGrid: {fileID: 0}
   grid: {fileID: 1287701681555196, guid: fa6be9d42e7ac6a4e909377d44b230e3, type: 2}
   ring: {fileID: 0}
---- !u!114 &114757961045085084
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1270133521288718}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49e74dc5cf1c844449ae6f703404a4b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifePos1: {fileID: 0}
-  lifePos2: {fileID: 0}
-  lifePos3: {fileID: 0}
-  lifeObject: {fileID: 1775996126994148, guid: 91b80a23e8ab2dd458da5854e0a2e1d2, type: 2}

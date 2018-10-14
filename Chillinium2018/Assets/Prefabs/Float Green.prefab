@@ -124,6 +124,8 @@ MonoBehaviour:
   tileMask:
     serializedVersion: 2
     m_Bits: 1024
+  pObjSelected: {fileID: 0}
+  lastpObjSelected: {fileID: 0}
 --- !u!135 &135822726109844036
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -134,5 +136,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.8
   m_Center: {x: 0, y: 0, z: 0}

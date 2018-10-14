@@ -57,12 +57,12 @@ public class placementObj : MonoBehaviour
                    //other.transform.position = gameObject.transform.position;
                   
                // filled = true;
-                    color = other.gameObject.GetComponent<FloatBox>().color;
+                   // color = other.gameObject.GetComponent<FloatBox>().color;
 
             }
             else
             {
-                color = 4;
+               // color = 4;
            //     other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
               //  other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
             }
@@ -73,7 +73,7 @@ public class placementObj : MonoBehaviour
         if (other.CompareTag("float"))
         {
            
-            color = 4;
+            //color = 4;
             filled = false;
         }
     }

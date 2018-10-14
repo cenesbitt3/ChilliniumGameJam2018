@@ -46,7 +46,7 @@ public class Manager : MonoBehaviour {
     public void LoseLife() {
         if (lives.Count > 0)
         {
-            lifeScript.UpdateLives(lives.Count-1);
+            //lifeScript.UpdateLives(lives.Count-1);
             lives.RemoveAt(lives.Count - 1);
             
 
