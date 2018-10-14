@@ -18,6 +18,7 @@ public class placementObj : MonoBehaviour
     public Material firstMat;
     public Material secondMat;
     public Material thirdMat;
+    public bool selected = false;
      
 
     private void Awake()
@@ -28,7 +29,8 @@ public class placementObj : MonoBehaviour
     }
     private void Update()
     {
-        if (hover)
+        
+        if (selected)
         {
             gameObject.GetComponent<Renderer>().material = secondMat;
         }
@@ -79,9 +81,13 @@ public class placementObj : MonoBehaviour
     {
         gameObject.GetComponent<Renderer>().material = secondMat;
     }
-    public void Taken()
+    void HitByRay()
     {
-
+        selected = true;
     }
-    
+    private void LateUpdate()
+    {
+        selected = false;
+    }
+
 }
