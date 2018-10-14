@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Manager : MonoBehaviour {
 
     public Material[] mats = new Material[3];
     public GameObject introText, posToCreate, ring, convergenceSpot;
     public ParticleSystem redExplosion, greenExplosion;
-
+    
     bool startOfGame = false;
     bool readyToPlay = false;
     GameObject holderGameObject;
     ButtonManager buttonManagerScript;
+   
 
     public void Awake()
     {
