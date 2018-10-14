@@ -24,6 +24,7 @@ public class EnemyGrid : MonoBehaviour {
     bool passed = false;
     bool failed = false;
     int hueChange = -1;
+    public GameObject plane;
 
     public void Awake()
     {
@@ -90,7 +91,26 @@ public class EnemyGrid : MonoBehaviour {
         spawner.Spawn2();
 
     }
+    public void Explode()
+    {
+        GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
+        foreach (GameObject g in floats)
+        {
+            Rigidbody rb = g.GetComponent<Rigidbody>();  
+            rb.AddExplosionForce(300.0f, transform.position, 5.0f);
 
+        }
+        foreach (GameObject g in floats)
+        {
+            Destroy(g, .5f);
+        }
+        managerScript.greenExplosion.Play();
+        Debug.Log("Time to create the next instructions");
+
+        hueScript.AddToHue();
+        scoreScript.AddToScore();
+        Destroy(this.gameObject);
+    }
     public void Update()
     {
         float step = convergenceSpeed * Time.deltaTime;
@@ -100,23 +120,33 @@ public class EnemyGrid : MonoBehaviour {
             if (hueChange == 4) {
                 hueChange = 0;
             }
+            //GameObject plane = transform.GetChild(transform.childCount - 1).gameObject;
+            Destroy(plane);
+            gameObject.transform.DetachChildren();
            
             GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
             foreach (GameObject g in floats) {
                 Rigidbody rb = g.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.None;
-                rb.AddExplosionForce(10.0f, managerScript.convergenceSpot.transform.position, 10.0f);
+                try
+                {
+                    rb.constraints = RigidbodyConstraints.None;
+                    rb.isKinematic = false;
+                }
+                catch
+                {
+
+                }
+                rb.gameObject.GetComponent<SphereCollider>().radius = .4f;
+                Vector3 direction = transform.position - rb.gameObject.transform.position;
+                rb.AddForce(direction.normalized * 20, ForceMode.Impulse);
+                Invoke("Explode", 1f);
+               
                 
             }
             foreach (GameObject g in floats) {
-                Destroy(g);
+                Destroy(g,3f);
             }
-            managerScript.greenExplosion.Play();
-            Debug.Log("Time to create the next instructions");
-
-            hueScript.AddToHue();
-            scoreScript.AddToScore();
-            Destroy(this.gameObject);
+            
 
         }
 
@@ -152,19 +182,19 @@ public class EnemyGrid : MonoBehaviour {
                 if (pmanger.colors[i] == colorChoice[i])
                 {
                     winNum++;
-                    Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+                   // Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
                 }
-                Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
+                //Debug.Log("working" + i + pmanger.colors[i] + colorChoice[i]);
             }
             if (winNum == 9)
             {
                 passed = true;
-                Debug.Log(" true");
+                //Debug.Log(" true");
             }
             else
             {
                 failed = true;
-                Debug.Log(" false");
+               // Debug.Log(" false");
             }
         }
     }

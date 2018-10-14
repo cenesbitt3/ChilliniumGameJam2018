@@ -32,6 +32,7 @@ public class FloatBox : MonoBehaviour
     public GameObject pObjSelected;
     public GameObject lastpObjSelected;
     placementManger Placementmanager;
+    public GameObject connectPrefab;
 
     void Awake()
     {
@@ -49,7 +50,26 @@ public class FloatBox : MonoBehaviour
 
     private void Update()
     {
-      switch (color)
+      /*  Collider[] colliders = Physics.OverlapSphere(gameObject.transform.position, 1f);
+        foreach (Collider c in colliders)
+        {
+            if (c.CompareTag("float"))
+            {
+
+
+                if (c.gameObject != gameObject)
+                {
+                    GameObject Connection = Instantiate(connectPrefab, gameObject.transform.position, transform.rotation);
+
+                    Connection.transform.position = c.gameObject.transform.position - gameObject.transform.position / 2.0f + gameObject.transform.position;
+                    var v3T = Connection.transform.localScale;      // Scale it
+                    v3T.y = (c.gameObject.transform.position - gameObject.transform.position).magnitude;
+                    Connection.transform.localScale = v3T;
+                }
+               // Connection.transform.localScale = new Vector3(1, 1, Vector3.Distance(c.gameObject.transform.position, Connection.gameObject.transform.position) / 2);
+            }}*/
+        
+        switch (color)
         {
             case 0:
                 mat.material = red;
@@ -88,10 +108,10 @@ public class FloatBox : MonoBehaviour
 
         }
         myRB.constraints = RigidbodyConstraints.None;
-          myRB.constraints = RigidbodyConstraints.FreezePositionZ;
+        myRB.constraints = RigidbodyConstraints.FreezePositionZ;
         stuck = false;
-            screenPoint = cam.WorldToScreenPoint(transform.position);
-            offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+        screenPoint = cam.WorldToScreenPoint(transform.position);
+        offset = transform.position - cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         //placement = false;
         if (!raised)
         {
@@ -99,10 +119,11 @@ public class FloatBox : MonoBehaviour
             Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
             //transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z);
             Vector3 direction = curPosition - myRB.transform.position;
-            myRB.AddForce(direction.normalized *30f);
+            myRB.AddForce(direction.normalized * 0f);
             transform.position = Vector3.Lerp(transform.position, new Vector3(transform.position.x, transform.position.y, transform.position.z - 60f), 2f * Time.deltaTime);
             raised = true;
         }
+        
     }
     private void OnMouseUp()
     {
@@ -145,6 +166,7 @@ public class FloatBox : MonoBehaviour
         }
 
     }
+    
     void OnMouseDrag()
     {
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);

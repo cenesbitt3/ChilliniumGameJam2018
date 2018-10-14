@@ -8,6 +8,7 @@ public class Score : MonoBehaviour {
     public Text scoreText;
     public Text highScore;
     public int score = 0;
+    public GameObject powerBar;
 
     public void Start()
     {
@@ -18,6 +19,7 @@ public class Score : MonoBehaviour {
     public void AddToScore() {
         score++;
         UpdateText();
+        powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
         Debug.Log("Score: " + score);
     }
 	

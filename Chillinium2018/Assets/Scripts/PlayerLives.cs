@@ -9,7 +9,7 @@ public class PlayerLives : MonoBehaviour {
     ButtonManager buttonScript;
     TimerCreation timerScript;
     Score scoreScript;
-    public int lives = 3;
+    public int lives = 1;
     public bool dead = false;
 
     public void Awake()
@@ -37,7 +37,7 @@ public class PlayerLives : MonoBehaviour {
 
     public void LoseLife() {
         Debug.Log("We have enter Lose a life function");
-        if (lives <= 1)
+        if (lives <= 0)
         {
             dead = true;
             timerScript.playerGrid.SetActive(false);
