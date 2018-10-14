@@ -15,7 +15,6 @@ namespace UnityEngine.PostProcessing
     {
         // Inspector fields
         public PostProcessingProfile profile;
-        public List<PostProcessingProfile> profiles = new List<PostProcessingProfile>();
 
         public Func<Vector2, Matrix4x4> jitteredMatrixFunc;
 

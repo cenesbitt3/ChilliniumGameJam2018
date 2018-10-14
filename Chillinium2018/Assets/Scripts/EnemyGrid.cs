@@ -17,9 +17,11 @@ public class EnemyGrid : MonoBehaviour {
     public Spawner spawner;
     Manager managerScript;
     ButtonManager buttonManagerScript;
+    PostProcesssorController hueScript;
     int winNum;
     bool passed = false;
     bool failed = false;
+    int hueChange = -1;
 
     public void Awake()
     {
@@ -27,6 +29,7 @@ public class EnemyGrid : MonoBehaviour {
         pmanger = FindObjectOfType<placementManger>();
         managerScript = FindObjectOfType<Manager>();
         buttonManagerScript = FindObjectOfType<ButtonManager>();
+        hueScript = FindObjectOfType<PostProcesssorController>();
         CreateInstructions();
         winNum = 0;
     }
@@ -89,6 +92,10 @@ public class EnemyGrid : MonoBehaviour {
         float step = convergenceSpeed * Time.deltaTime;
 
         if (passed) {
+            hueChange++;
+            if (hueChange == 4) {
+                hueChange = 0;
+            }
            
             GameObject[] floats = GameObject.FindGameObjectsWithTag("float");
             foreach (GameObject g in floats) {
@@ -103,7 +110,7 @@ public class EnemyGrid : MonoBehaviour {
             managerScript.greenExplosion.Play();
             Debug.Log("Time to create the next instructions");
             Destroy(this.gameObject);
-
+            hueScript.ChangeHueOnInt(hueChange);
 
         }
 
