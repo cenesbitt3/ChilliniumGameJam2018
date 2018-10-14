@@ -464,22 +464,19 @@ MonoBehaviour:
   - {fileID: 1418551874893660}
   - {fileID: 1923896505959004}
   convergenceSpeed: 6
-  atom: {fileID: 1507816747948564, guid: d1084f7b68ef9fb42bacd7cd4c07326a, type: 2}
-  cube: {fileID: 1507816747948564, guid: 1014c54ccf69af04d8a6434f0ef6833c, type: 2}
-  diamond: {fileID: 1507816747948564, guid: f99db906a69e6f14faf26a2521c0fd76, type: 2}
   colorChoice: 000000000000000000000000000000000000000000000000000000000000000000000000
   spawner: {fileID: 114680752798875190, guid: c212cbbb84261254fa7185990ff70aca, type: 2}
   plane: {fileID: 1963221535593696}
-  square: {fileID: 4300000, guid: 498c36c1c586a5b40b7d0ef4ef3caca1, type: 3}
-  sphere: {fileID: 4300000, guid: 224cc4ffd785426488438031c3ea7bdc, type: 3}
-  diamond: {fileID: 4300000, guid: a3034790a942a66438fe24e44d5bf7f7, type: 3}
+  square: {fileID: 0}
+  sphere: {fileID: 0}
+  diamond: {fileID: 1507816747948564, guid: f99db906a69e6f14faf26a2521c0fd76, type: 2}
   yourMesh: {fileID: 0}
 --- !u!114 &114581131947691458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1604770254292020}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -490,7 +487,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1316434519007436}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -501,7 +498,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014397689376920}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -512,7 +509,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336571261928322}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -523,7 +520,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1786743146166272}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -534,7 +531,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1126666130799054}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -545,7 +542,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1711828255524200}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
@@ -556,7 +553,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1583432802458548}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}

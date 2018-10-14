@@ -44,6 +44,7 @@ public class Manager : MonoBehaviour {
                 buttonManagerScript.livesText.SetActive(true);
                 buttonManagerScript.heart.SetActive(true);
                 buttonManagerScript.slider.SetActive(true);
+               
             }
         }
     }

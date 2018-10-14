@@ -7,7 +7,7 @@ public class EnemyGrid : MonoBehaviour {
     public GameObject[] places = new GameObject[9];
     public float convergenceSpeed = 6.0f;
     bool isFilled;
-    public GameObject atom, cube, diamond;
+
 
     placementManger pmanger;
 
