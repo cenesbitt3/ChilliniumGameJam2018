@@ -213,8 +213,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870448535215766}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4038627, y: 2.2385979, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: -1.6766, y: 1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 0
@@ -226,8 +226,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717761559525372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16143315, y: -1.0370402, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 0, y: -1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 7
@@ -239,8 +239,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073130571095460}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.403863, y: -1.0370404, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: -1.6766, y: -1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 6
@@ -252,8 +252,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204466209107926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16143315, y: 0.6491276, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00045013}
+  m_LocalScale: {x: 0.362066, y: 0.362066, z: 0.12537047}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 4
@@ -265,8 +265,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583619628848148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8899065, y: 2.2385979, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 1.6766, y: 1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 2
@@ -278,7 +278,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1731998233944970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.22, y: -8.45, z: 10.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4141362587788012}
@@ -300,8 +300,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825180236964132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8899065, y: -1.0370402, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 1.6766, y: -1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 8
@@ -313,8 +313,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000389009303128}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.403863, y: 0.6491276, z: -0.01}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: -1.6766, y: 0, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 3
@@ -326,8 +326,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1765755709386014}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8899065, y: 0.6491276, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 1.6766, y: 0, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 5
@@ -339,8 +339,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1550095181847284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16143316, y: 2.2385979, z: -0.00999999}
-  m_LocalScale: {x: 0.5364378, y: 0.5364378, z: 0.18574916}
+  m_LocalPosition: {x: 0, y: 1.6766, z: -0.0095499}
+  m_LocalScale: {x: 0.3335352, y: 0.3335352, z: 0.11549128}
   m_Children: []
   m_Father: {fileID: 4581604480683170}
   m_RootOrder: 1
@@ -351,9 +351,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1550095181847284}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -386,9 +386,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1204466209107926}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -421,9 +421,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1765755709386014}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -456,9 +456,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1717761559525372}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -491,9 +491,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1583619628848148}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -526,9 +526,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825180236964132}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -561,9 +561,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000389009303128}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -596,9 +596,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1870448535215766}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -631,9 +631,9 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1073130571095460}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -868,7 +868,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65181578951829708
 BoxCollider:
@@ -880,7 +880,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65182980366440788
 BoxCollider:
@@ -892,7 +892,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65205559760953462
 BoxCollider:
@@ -904,7 +904,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65297488088712562
 BoxCollider:
@@ -916,7 +916,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65335982288540796
 BoxCollider:
@@ -928,7 +928,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65470287412483422
 BoxCollider:
@@ -940,7 +940,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65496582726440932
 BoxCollider:
@@ -952,7 +952,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65970079251377370
 BoxCollider:
@@ -964,7 +964,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114106780554442108
 MonoBehaviour:
@@ -977,9 +977,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 2
+  placement: 1
   occupyFloat: {fileID: 0}
 --- !u!114 &114216520380772922
 MonoBehaviour:
@@ -992,9 +993,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 8
+  placement: 7
   occupyFloat: {fileID: 0}
 --- !u!114 &114303446103123824
 MonoBehaviour:
@@ -1007,9 +1009,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 5
+  placement: 4
   occupyFloat: {fileID: 0}
 --- !u!114 &114366240620621896
 MonoBehaviour:
@@ -1022,9 +1025,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 7
+  placement: 6
   occupyFloat: {fileID: 0}
 --- !u!114 &114428168296167058
 MonoBehaviour:
@@ -1037,9 +1041,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 4
+  placement: 3
   occupyFloat: {fileID: 0}
 --- !u!114 &114592470419418892
 MonoBehaviour:
@@ -1052,9 +1057,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 1
+  placement: 0
   occupyFloat: {fileID: 0}
 --- !u!114 &114757859399315396
 MonoBehaviour:
@@ -1067,9 +1073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 3
+  placement: 2
   occupyFloat: {fileID: 0}
 --- !u!114 &114808611823074384
 MonoBehaviour:
@@ -1082,9 +1089,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 6
+  placement: 5
   occupyFloat: {fileID: 0}
 --- !u!114 &114961540040316738
 MonoBehaviour:
@@ -1097,7 +1105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd7b4a6aa513804f9ff51f46ef388b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   filled: 0
   color: 0
-  placement: 9
+  placement: 8
   occupyFloat: {fileID: 0}

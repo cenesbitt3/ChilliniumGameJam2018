@@ -10,6 +10,8 @@ TagManager:
   - ScreenCollider
   - Text
   - Destroyer
+  - placement
+  - pObj
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - PostProcessing
   - Float
-  - 
+  - tileMask
   - 
   - 
   - 

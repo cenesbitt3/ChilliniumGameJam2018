@@ -2,35 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Manager : MonoBehaviour {
 
     public Material[] mats = new Material[3];
     public GameObject introText, posToCreate, ring, convergenceSpot;
-    public ParticleSystem atomExplosion;
+    public ParticleSystem redExplosion, greenExplosion;
+
+    
+    public List<Component> postProcessors = new List<Component>();
 
     bool startOfGame = false;
     bool readyToPlay = false;
     GameObject holderGameObject;
     ButtonManager buttonManagerScript;
+    PlayerLives lifeScript;
 
     public void Awake()
     {
         buttonManagerScript = FindObjectOfType<ButtonManager>();
+        lifeScript = FindObjectOfType<PlayerLives>();
     }
 
     public void Update()
     {
         if (!startOfGame) {
-            try
-            {
+            
                 holderGameObject = Instantiate(introText, posToCreate.transform.position, posToCreate.transform.rotation);
                 holderGameObject.transform.parent = ring.transform;
                 startOfGame = true;
-            }
-            catch
-            {
-
-            }
+           
         }
 
         if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse1) && !Input.GetKeyDown(KeyCode.Mouse2)) {

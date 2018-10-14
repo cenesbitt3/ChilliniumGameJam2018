@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1270133521288718}
+  m_IsPrefabAsset: 1
+--- !u!1 &1270133521288718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4095505124189128}
+  - component: {fileID: 114626073649383920}
+  - component: {fileID: 114273716207828196}
+  - component: {fileID: 114546521428021088}
+  - component: {fileID: 114852690115017366}
+  - component: {fileID: 114789241804756362}
+  m_Layer: 0
+  m_Name: GameManger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4095505124189128
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114273716207828196
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d930c54440072448b9fd9cc75749895, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: d51c14b6f4e83224592f41a519783142, type: 2}
+  - {fileID: 2100000, guid: 1ac05411ee2cf5b45815a9c20bc26e00, type: 2}
+  - {fileID: 2100000, guid: 6f9a9496900dfc941bac09c01f112f1e, type: 2}
+  introText: {fileID: 1583624184151974, guid: 8b5d9af89572cff419679780679f112d, type: 2}
+  posToCreate: {fileID: 0}
+  ring: {fileID: 0}
+  convergenceSpot: {fileID: 0}
+  redExplosion: {fileID: 0}
+  greenExplosion: {fileID: 0}
+  postProcessors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &114546521428021088
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 448f0c7871a0f29458b3be18146ddeb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instructionScreen: {fileID: 0}
+  exitInstructionButton: {fileID: 0}
+  creditsScreen: {fileID: 0}
+  instructionButton: {fileID: 0}
+  quitButton: {fileID: 0}
+  creditsButton: {fileID: 0}
+  exitCreditButton: {fileID: 0}
+  gameOverScreen: {fileID: 0}
+  restartButton: {fileID: 0}
+  scoreText: {fileID: 0}
+  highScoreText: {fileID: 0}
+  blankScreen: {fileID: 0}
+  optionsButton: {fileID: 0}
+  otherHighScore: {fileID: 0}
+  resetButton: {fileID: 0}
+  exitOptionButton: {fileID: 0}
+--- !u!114 &114626073649383920
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 102dc4244c34a644d83b9609633da23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 3
+  creationPosition: {fileID: 0}
+  playerGrid: {fileID: 0}
+  grid: {fileID: 1287701681555196, guid: fa6be9d42e7ac6a4e909377d44b230e3, type: 2}
+  ring: {fileID: 0}
+--- !u!114 &114789241804756362
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e74dc5cf1c844449ae6f703404a4b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifePos1: {fileID: 0}
+  lifePos2: {fileID: 0}
+  lifePos3: {fileID: 0}
+  lifeObject: {fileID: 0}
+  lives: 3
+  dead: 0
+--- !u!114 &114852690115017366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1270133521288718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963ffca24895c2a42a90f13d3a433711, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
+  highScore: {fileID: 0}
+  score: 0

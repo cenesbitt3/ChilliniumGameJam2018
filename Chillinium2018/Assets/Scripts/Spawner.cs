@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour {
     GameObject Center;
     float min = 50f;
     float max = 80f;
+    placementManger pManger;
 
     public List<GameObject> referenceToPlace = new List<GameObject>();
 
@@ -19,8 +20,9 @@ public class Spawner : MonoBehaviour {
 
 	void Start () {
         Center = GameObject.Find("Center");
+        pManger =  FindObjectOfType<placementManger>();
         //curGrid = FindObjectOfType<EnemyGrid>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -38,8 +40,12 @@ public class Spawner : MonoBehaviour {
     }
 
     public void Spawn2() {
-        
-        for (int i = 0; i < referenceToPlace.Count; i++)
+        for (int i = 0; i < 9; i++){
+            pManger.colors[i] = 4;
+            pManger.filled[i] = false;
+            
+        }
+            for (int i = 0; i < referenceToPlace.Count; i++)
         {
             EnemyPlacementManager enemyPlace = referenceToPlace[i].GetComponent<EnemyPlacementManager>();
             switch (enemyPlace.GetColor()) {

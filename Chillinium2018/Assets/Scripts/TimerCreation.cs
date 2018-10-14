@@ -10,21 +10,26 @@ public class TimerCreation : MonoBehaviour {
     public Transform ring;
 
     bool readyToSpawn = false;
+    PlayerLives livesScript;
+
+    public void Awake()
+    {
+        livesScript = FindObjectOfType<PlayerLives>();
+    }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightShift))
-        {
-            readyToSpawn = true;
-        }
         if (readyToSpawn)
         {
             playerGrid.SetActive(true);
-            if (!GameObject.FindGameObjectWithTag("Grid"))
+            if (!livesScript.dead)
             {
-                GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
-                newGrid.transform.parent = ring;
-                Destroy(GameObject.Find("IntroText_3"));
+                if (!GameObject.FindGameObjectWithTag("Grid"))
+                {
+                    GameObject newGrid = Instantiate(grid, creationPosition.transform.position, creationPosition.transform.rotation);
+                    newGrid.transform.parent = ring;
+                    Destroy(GameObject.Find("IntroText_3"));
+                }
             }
         }
 
