@@ -99,10 +99,10 @@ public class FloatBox : MonoBehaviour
         Vector3 curPosition = cam.ScreenToWorldPoint(curScreenPoint) + offset;
         transform.position = new Vector3(curPosition.x, curPosition.y, transform.position.z );
         RaycastHit hit;
-             if (Physics.Raycast(transform.position, -curPosition, out hit, Mathf.Infinity, tileMask))
+             if (Physics.Raycast(transform.position, Vector3.forward, out hit, Mathf.Infinity, tileMask))
             {
                 hit.collider.gameObject.GetComponent<placementObj>().hover = true;
-                Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+                Debug.DrawRay(transform.position, -curPosition * hit.distance, Color.yellow);
                 Debug.Log("Did Hit");
         }
         else

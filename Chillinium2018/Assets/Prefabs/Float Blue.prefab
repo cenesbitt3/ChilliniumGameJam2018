@@ -121,6 +121,9 @@ MonoBehaviour:
   drag: 0
   pObject: {fileID: 0}
   force: 15
+  tileMask:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!135 &135737179334011448
 SphereCollider:
   m_ObjectHideFlags: 1
