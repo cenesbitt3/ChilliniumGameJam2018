@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    public Text scoreText;
+    public Text scoreText, constantScoreText;
     public Text highScore;
     public int score = 0;
     public Slider powerSlider;
@@ -35,7 +35,8 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	public void UpdateText () {
         scoreText.text = "Score: "+ score;
-	}
+        constantScoreText.text = "Score: " + score;
+    }
 
     public void UpdateHighScore() {
         if (score > PlayerPrefs.GetInt("HighScore", 0)) {

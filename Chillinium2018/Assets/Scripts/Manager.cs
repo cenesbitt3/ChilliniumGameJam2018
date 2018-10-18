@@ -48,6 +48,7 @@ public class Manager : MonoBehaviour {
                 buttonManagerScript.livesText.SetActive(true);
                 buttonManagerScript.heart.SetActive(true);
                 buttonManagerScript.slider.SetActive(true);
+                buttonManagerScript.constantScoreText.SetActive(true);
                 anim.SetBool("GO", true);
                 cam.GetComponent<AudioSource>().clip = Main;
                 cam.GetComponent<AudioSource>().Play();

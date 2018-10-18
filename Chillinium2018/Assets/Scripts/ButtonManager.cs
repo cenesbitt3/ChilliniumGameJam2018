@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonManager : MonoBehaviour {
     public GameObject instructionScreen, exitInstructionButton, creditsScreen, instructionButton, quitButton, creditsButton, exitCreditButton, gameOverScreen, restartButton;
-    public GameObject scoreText, highScoreText, blankScreen, optionsButton, otherHighScore, resetButton, exitOptionButton;
+    public GameObject scoreText, highScoreText, blankScreen, optionsButton, otherHighScore, resetButton, exitOptionButton, constantScoreText;
     public GameObject slider, heart, livesText;
     PlayerLives livesScript;
     Score scoreScript;
