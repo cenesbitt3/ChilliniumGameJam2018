@@ -65,11 +65,16 @@ MonoBehaviour:
   convergenceSpot: {fileID: 0}
   redExplosion: {fileID: 0}
   greenExplosion: {fileID: 0}
+  anim: {fileID: 0}
+  beginSong: {fileID: 8300000, guid: b857271c72c4a3b4da775a9842bc2f2a, type: 3}
+  GameOver: {fileID: 0}
+  Main: {fileID: 8300000, guid: aadc2d3d25b91b04ea58a08ed42c8391, type: 3}
   postProcessors:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  cam: {fileID: 0}
 --- !u!114 &114546521428021088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -97,6 +102,7 @@ MonoBehaviour:
   otherHighScore: {fileID: 0}
   resetButton: {fileID: 0}
   exitOptionButton: {fileID: 0}
+  constantScoreText: {fileID: 0}
   slider: {fileID: 0}
   heart: {fileID: 0}
   livesText: {fileID: 0}
@@ -127,10 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49e74dc5cf1c844449ae6f703404a4b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifePos1: {fileID: 0}
-  lifePos2: {fileID: 0}
-  lifePos3: {fileID: 0}
-  lifeObject: {fileID: 0}
   lives: 1
   dead: 0
   numLives: {fileID: 0}
@@ -146,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  constantScoreText: {fileID: 0}
   highScore: {fileID: 0}
   score: 0
   powerSlider: {fileID: 0}

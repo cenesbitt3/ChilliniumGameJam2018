@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerLives : MonoBehaviour {
 
-    public GameObject lifePos1, lifePos2, lifePos3, lifeObject;
     Manager managerScript;
     ButtonManager buttonScript;
     TimerCreation timerScript;
