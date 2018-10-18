@@ -21,16 +21,10 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void InstructionsButton() {
-       // Time.timeScale = 0f;
         instructionScreen.SetActive(true);
-        exitInstructionButton.SetActive(true);
-        creditsButton.SetActive(true);
-        instructionButton.SetActive(false);
-        quitButton.SetActive(false);
-        slider.SetActive(false);
-        heart.SetActive(false);
-        livesText.SetActive(false);
         optionsButton.SetActive(false);
+        quitButton.SetActive(false);
+        instructionButton.SetActive(false);
 
     }
 
@@ -40,16 +34,10 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void ExitInstructions() {
-        //Time.timeScale = 1f;
         instructionScreen.SetActive(false);
-        exitInstructionButton.SetActive(false);
-        creditsButton.SetActive(false);
-        instructionButton.SetActive(true);
-        quitButton.SetActive(true);
-        slider.SetActive(true);
-        heart.SetActive(true);
-        livesText.SetActive(true);
         optionsButton.SetActive(true);
+        quitButton.SetActive(true);
+        instructionButton.SetActive(true);
     }
 
     public void QuitGameButton() {
@@ -57,72 +45,43 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void CreditsButton() {
-        instructionScreen.SetActive(false);
         creditsScreen.SetActive(true);
-        exitCreditButton.SetActive(true);
-        exitInstructionButton.SetActive(false);
-        creditsButton.SetActive(false);
     }
 
     public void ExitCreditButton() {
         creditsScreen.SetActive(false);
-        exitCreditButton.SetActive(false);
-        InstructionsButton();
     }
 
     public void TurnOnGameOver() {
-        //Time.timeScale = 0f;
         gameOverScreen.gameObject.SetActive(true);
-        restartButton.SetActive(true);
-        quitButton.SetActive(true);
-        scoreText.SetActive(true);
-        highScoreText.SetActive(true);
-        timerScriprt.playerGrid.SetActive(false);
-
     }
 
     public void RestartButton() {
-        //Time.timeScale = 1f;
         processingScript.hueChnage = 0;
         processingScript.ChangeHueProfileOne();
         scoreScript.score = 0;
         scoreScript.UpdateText();
         livesScript.dead = false;
-        livesScript.lives = 3;
-        gameOverScreen.gameObject.SetActive(false);
-        restartButton.SetActive(false);
-        quitButton.SetActive(false);
-        scoreText.SetActive(false);
-        highScoreText.SetActive(false);
+        livesScript.lives = 1;
         livesScript.UpdateText();
         timerScriprt.playerGrid.SetActive(false);
+
+        gameOverScreen.gameObject.SetActive(false);
     }
 
     public void OptionsButton() {
-        // Time.timeScale = 0f;
         OtherHighScore();
-        optionsButton.SetActive(false);
-        quitButton.SetActive(false);
-        instructionButton.SetActive(false);
-        exitOptionButton.SetActive(true);
-        resetButton.SetActive(true);
-        otherHighScore.SetActive(true);
         blankScreen.SetActive(true);
-        slider.SetActive(false);
-        heart.SetActive(false);
-        livesText.SetActive(false);
-
+        optionsButton.SetActive(false);
+        instructionButton.SetActive(false);
+        quitButton.SetActive(false);
     }
 
     public void ExitOptionsButton() {
-       // Time.timeScale = 1f;
         blankScreen.SetActive(false);
-        resetButton.SetActive(false);
-        otherHighScore.SetActive(false);
-        exitOptionButton.SetActive(false);
         optionsButton.SetActive(true);
-        quitButton.SetActive(true);
         instructionButton.SetActive(true);
+        quitButton.SetActive(true);
     }
 
     public void ResetButton()
