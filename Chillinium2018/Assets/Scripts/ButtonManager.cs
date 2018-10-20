@@ -11,6 +11,7 @@ public class ButtonManager : MonoBehaviour {
     Score scoreScript;
     PostProcesssorController processingScript;
     TimerCreation timerScriprt;
+    public GameObject playerGrid;
 
     public void Awake()
     {
@@ -96,6 +97,7 @@ public class ButtonManager : MonoBehaviour {
         highScoreText.SetActive(false);
         livesScript.UpdateText();
         timerScriprt.playerGrid.SetActive(false);
+        //playerGrid.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void OptionsButton() {
