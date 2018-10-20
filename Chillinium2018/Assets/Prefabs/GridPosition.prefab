@@ -464,6 +464,8 @@ MonoBehaviour:
   - {fileID: 1418551874893660}
   - {fileID: 1923896505959004}
   convergenceSpeed: 6
+  goodExplode: {fileID: 8300000, guid: 7df2e091c69fe9d46bab8e527b04d209, type: 3}
+  badExplode: {fileID: 8300000, guid: a6777753ff71769429983065a3f8d904, type: 3}
   colorChoice: 000000000000000000000000000000000000000000000000000000000000000000000000
   spawner: {fileID: 114680752798875190, guid: c212cbbb84261254fa7185990ff70aca, type: 2}
   plane: {fileID: 1963221535593696}
@@ -471,6 +473,7 @@ MonoBehaviour:
   sphere: {fileID: 0}
   diamond: {fileID: 1507816747948564, guid: f99db906a69e6f14faf26a2521c0fd76, type: 2}
   yourMesh: {fileID: 0}
+  Cam: {fileID: 0}
 --- !u!114 &114581131947691458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -559,6 +562,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9522953f0eab75a4f8cb721c8f36667a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &135010270004192388
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287701681555196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!135 &135301878515751846
 SphereCollider:
   m_ObjectHideFlags: 1

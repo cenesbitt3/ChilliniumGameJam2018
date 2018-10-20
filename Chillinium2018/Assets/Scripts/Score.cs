@@ -23,6 +23,11 @@ public class Score : MonoBehaviour {
         powerSlider.value += 20;
         score++;
         UpdateText();
+        if (powerSlider.value >= 100) {
+            powerSlider.value = 0;
+            livesScript.GainLife();
+
+        }
         //powerBar.transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + 10f, transform.localScale.z);
         Debug.Log("Score: " + score);
     }
