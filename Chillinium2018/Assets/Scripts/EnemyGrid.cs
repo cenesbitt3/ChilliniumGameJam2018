@@ -34,6 +34,7 @@ public class EnemyGrid : MonoBehaviour {
     public Mesh yourMesh;
     bool first = true;
     public GameObject Cam;
+    rotateRing ringScript;
 
     public void Awake()
     {
@@ -46,6 +47,7 @@ public class EnemyGrid : MonoBehaviour {
         hueScript = FindObjectOfType<PostProcesssorController>();
         scoreScript = FindObjectOfType<Score>();
         livesScript = FindObjectOfType<PlayerLives>();
+        ringScript = FindObjectOfType<rotateRing>();
         CreateInstructions();
         winNum = 0;
     }
@@ -124,6 +126,7 @@ public class EnemyGrid : MonoBehaviour {
             }
         }
         first = false;
+        ringScript.ChangeSpeed(spawner.referenceToPlace.Count);  // should be different each time
         spawner.Spawn2();
         
     }
