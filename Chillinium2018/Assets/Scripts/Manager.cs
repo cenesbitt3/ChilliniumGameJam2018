@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour {
     public AudioClip GameOver;
     public AudioClip Main;
     
+
     public List<Component> postProcessors = new List<Component>();
 
     bool startOfGame = false;
