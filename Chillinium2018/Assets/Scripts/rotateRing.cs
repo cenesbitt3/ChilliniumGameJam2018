@@ -4,16 +4,45 @@ using UnityEngine;
 
 public class rotateRing : MonoBehaviour {
 
-     float RotationSpeed;
-
-    int numAtoms;
+    public float RotationSpeed = 5f;
     
 	
 	
 	void Update () {
 
-       // GameObject[] atoms = GameObject.FindGameObjectsWithTag("float");
-        transform.Rotate(Vector3.right * ((RotationSpeed) * Time.deltaTime));
+        switch (howManyAtoms) {
+            case 0:
+                transform.Rotate(Vector3.right * (6.25f * Time.deltaTime));
+                Debug.Log("Speed or ring is 10");
+                break;
+            case 1:
+                transform.Rotate(Vector3.right * (6f * Time.deltaTime));
+                break;
+            case 2:
+                transform.Rotate(Vector3.right * (5.75f * Time.deltaTime));
+                break;
+            case 3:
+                transform.Rotate(Vector3.right * (5.25f * Time.deltaTime));
+                break;
+            case 4:
+                transform.Rotate(Vector3.right * (5f * Time.deltaTime));
+                break;
+            case 5:
+                transform.Rotate(Vector3.right * (5f * Time.deltaTime));
+                break;
+            case 6:
+                transform.Rotate(Vector3.right * (4.75f * Time.deltaTime));
+                break;
+            case 7:
+                transform.Rotate(Vector3.right * (4.25f * Time.deltaTime));
+                break;
+            case 8:
+                transform.Rotate(Vector3.right * (4f * Time.deltaTime));
+                break;
+            case 9:
+                transform.Rotate(Vector3.right * (3.75f * Time.deltaTime));
+                break;
+        }
     }
 
     public void ChangeSpeed(int change) {
@@ -56,3 +85,7 @@ public class rotateRing : MonoBehaviour {
         }
     }
 }
+
+    public float RotationSpeed = 5f;
+
+    public int howManyAtoms;

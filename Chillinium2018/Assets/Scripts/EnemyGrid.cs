@@ -128,7 +128,12 @@ public class EnemyGrid : MonoBehaviour {
         first = false;
         ringScript.ChangeSpeed(spawner.referenceToPlace.Count);  // should be different each time
         spawner.Spawn2();
-        
+        // tell rotateRing how many atoms are being spawned
+        ringScript.howManyAtoms = spawner.referenceToPlace.Count;
+
+
+
+
     }
     public void Explode()
     {
@@ -178,6 +183,7 @@ public class EnemyGrid : MonoBehaviour {
                 {
 
                 }
+
                 try
                 {
                     rb.gameObject.GetComponent<SphereCollider>().radius = .4f;

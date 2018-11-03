@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationSpeed: 5
+  howManyAtoms: 0
 --- !u!64 &54961031
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -215,6 +216,11 @@ Prefab:
         type: 2}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20866570925242930, guid: 86aacb3cca870164aa0f84ecdf392bae,
+        type: 2}
+      propertyPath: orthographic
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82651959300064204, guid: 86aacb3cca870164aa0f84ecdf392bae, type: 2}
