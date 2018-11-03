@@ -34,6 +34,7 @@ public class EnemyGrid : MonoBehaviour {
     public Mesh yourMesh;
     bool first = true;
     public GameObject Cam;
+    rotateRing ringScript;
 
     public void Awake()
     {
@@ -46,6 +47,7 @@ public class EnemyGrid : MonoBehaviour {
         hueScript = FindObjectOfType<PostProcesssorController>();
         scoreScript = FindObjectOfType<Score>();
         livesScript = FindObjectOfType<PlayerLives>();
+        ringScript = FindObjectOfType<rotateRing>();
         CreateInstructions();
         winNum = 0;
     }
@@ -125,7 +127,12 @@ public class EnemyGrid : MonoBehaviour {
         }
         first = false;
         spawner.Spawn2();
-        
+        // tell rotateRing how many atoms are being spawned
+        ringScript.howManyAtoms = spawner.referenceToPlace.Count;
+
+
+
+
     }
     public void Explode()
     {
@@ -175,6 +182,7 @@ public class EnemyGrid : MonoBehaviour {
                 {
 
                 }
+
                 try
                 {
                     rb.gameObject.GetComponent<SphereCollider>().radius = .4f;
