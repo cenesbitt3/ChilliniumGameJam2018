@@ -35,6 +35,7 @@ public class EnemyGrid : MonoBehaviour {
     bool first = true;
     public GameObject Cam;
     rotateRing ringScript;
+    int nothingCounter=0;
 
     public void Awake()
     {
@@ -124,9 +125,17 @@ public class EnemyGrid : MonoBehaviour {
                 spawner.referenceToPlace.Add(places[i]);
                 
             }
+            if (!isFilled)
+            {
+                nothingCounter++;
+            }
+            if(nothingCounter >= 9)
+            {
+                Destroy(gameObject);
+            }
         }
         first = false;
-        ringScript.ChangeSpeed(spawner.referenceToPlace.Count);  // should be different each time
+        //ringScript.ChangeSpeed(spawner.referenceToPlace.Count);  // should be different each time
         spawner.Spawn2();
         // tell rotateRing how many atoms are being spawned
         ringScript.howManyAtoms = spawner.referenceToPlace.Count;

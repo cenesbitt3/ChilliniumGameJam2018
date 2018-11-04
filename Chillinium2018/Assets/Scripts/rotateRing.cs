@@ -5,10 +5,12 @@ using UnityEngine;
 public class rotateRing : MonoBehaviour {
 
     public float RotationSpeed = 5f;
-    
-	
-	
-	void Update () {
+   // public float RotationSpeed = 5f;
+
+    public int howManyAtoms;
+
+
+    void Update () {
 
         switch (howManyAtoms) {
             case 0:
@@ -44,7 +46,7 @@ public class rotateRing : MonoBehaviour {
                 break;
         }
     }
-
+/*
     public void ChangeSpeed(int change) {
         numAtoms = change;
 
@@ -83,9 +85,7 @@ public class rotateRing : MonoBehaviour {
                 Debug.Log("I did not expect this to happen. Rotation speed swith");
                 break;
         }
-    }
+    }*/
 }
 
-    public float RotationSpeed = 5f;
-
-    public int howManyAtoms;
+ //  
