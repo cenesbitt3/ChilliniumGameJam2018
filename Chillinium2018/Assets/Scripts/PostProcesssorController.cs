@@ -9,6 +9,7 @@ public class PostProcesssorController : MonoBehaviour {
     public PostProcessingBehaviour behavior;
 
     public int hueChnage = -1;
+    public bool hueSet = false;
 
     // Use this for initialization
     void Start () {
@@ -28,40 +29,48 @@ public class PostProcesssorController : MonoBehaviour {
     }
 
     public void ChangeHueOnInt(int changeProfile) {
-        Debug.Log("Thee hue int is " + changeProfile);
-        switch (changeProfile) {
-            case 0:
-                behavior.profile = newProfile[changeProfile];
-                break;
-            case 1:
-                behavior.profile = newProfile[changeProfile];
-                break;
-            case 2:
-                behavior.profile = newProfile[changeProfile];
-                break;
-            case 3:
-                behavior.profile = newProfile[changeProfile];
-                break;
+        if (!hueSet)
+        {
+            Debug.Log("Thee hue int is " + changeProfile);
+            switch (changeProfile)
+            {
+                case 0:
+                    behavior.profile = newProfile[changeProfile];
+                    break;
+                case 1:
+                    behavior.profile = newProfile[changeProfile];
+                    break;
+                case 2:
+                    behavior.profile = newProfile[changeProfile];
+                    break;
+                case 3:
+                    behavior.profile = newProfile[changeProfile];
+                    break;
+            }
         }
 
     }
 
     public void ChangeHueProfileOne() {
         behavior.profile = newProfile[0];
+        hueSet = true;
     }
 
     public void ChangeHueProfileTwo()
     {
         behavior.profile = newProfile[1];
+        hueSet = true;
     }
 
     public void ChangeHueProfileThree()
     {
         behavior.profile = newProfile[2];
+        hueSet = true;
     }
 
     public void ChangeHueProfileFour()
     {
         behavior.profile = newProfile[3];
+        hueSet = true;
     }
 }

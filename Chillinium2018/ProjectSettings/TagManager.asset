@@ -12,6 +12,7 @@ TagManager:
   - Destroyer
   - placement
   - pObj
+  - IntroText
   layers:
   - Default
   - TransparentFX

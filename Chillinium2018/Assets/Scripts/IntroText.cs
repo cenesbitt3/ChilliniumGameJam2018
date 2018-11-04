@@ -20,17 +20,20 @@ public class IntroText : MonoBehaviour {
     {
         if (other.gameObject.tag == "ScreenCollider")
         {
-            gameObject.transform.parent = null;
-            managerScript.SetReadyToPlay(true);
-            buttonManagerScript.instructionButton.SetActive(true);
-            buttonManagerScript.quitButton.SetActive(true);
-            buttonManagerScript.optionsButton.SetActive(true);
-            greenText.SetActive(true);
+            PressToPlay();
         }
         else if (other.gameObject.tag == "Destroyer") {
             Destroy(gameObject);
             timerScript.playerGrid.SetActive(true);
             timerScript.SetReadyToSpawn(true);
         }
+    }
+
+    public void PressToPlay() {
+        gameObject.transform.parent = null;
+        managerScript.SetReadyToPlay(true);
+        buttonManagerScript.StartScreenPanel.SetActive(true);
+        buttonManagerScript.quitButton.SetActive(true);
+        greenText.SetActive(true);
     }
 }

@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class ButtonManager : MonoBehaviour {
-    public GameObject instructionScreen, exitInstructionButton, creditsScreen, instructionButton, quitButton, creditsButton, exitCreditButton, gameOverScreen, restartButton;
-    public GameObject scoreText, highScoreText, blankScreen, optionsButton, otherHighScore, resetButton, exitOptionButton;
-    public GameObject slider, heart, livesText;
+    public GameObject instructionScreen, creditsScreen, quitButton, gameOverScreen;
+    public GameObject scoreText, highScoreText, optionsScreen, optionsButton, otherHighScore, resetButton;
+    public GameObject slider, inGameUIPanel, StartScreenPanel;
     PlayerLives livesScript;
     Score scoreScript;
     PostProcesssorController processingScript;
     TimerCreation timerScriprt;
     public GameObject playerGrid;
+    public Slider volumeSlider;
 
     public void Awake()
     {
@@ -22,17 +24,19 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void InstructionsButton() {
-       // Time.timeScale = 0f;
+        // Time.timeScale = 0f;
+        CloseUI();
         instructionScreen.SetActive(true);
-        exitInstructionButton.SetActive(true);
-        creditsButton.SetActive(true);
-        instructionButton.SetActive(false);
-        quitButton.SetActive(false);
-        slider.SetActive(false);
-        heart.SetActive(false);
-        livesText.SetActive(false);
-        optionsButton.SetActive(false);
+    }
 
+    public void CloseUI() {
+        instructionScreen.SetActive(false);
+        creditsScreen.SetActive(false);
+        gameOverScreen.SetActive(false);
+        optionsScreen.SetActive(false);
+        inGameUIPanel.SetActive(false);
+        StartScreenPanel.SetActive(false);
+        quitButton.SetActive(false);
     }
 
     public void OtherHighScore() {
@@ -41,16 +45,9 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void ExitInstructions() {
-        //Time.timeScale = 1f;
-        instructionScreen.SetActive(false);
-        exitInstructionButton.SetActive(false);
-        creditsButton.SetActive(false);
-        instructionButton.SetActive(true);
+        CloseUI();
+        StartScreenPanel.SetActive(true);
         quitButton.SetActive(true);
-        slider.SetActive(true);
-        heart.SetActive(true);
-        livesText.SetActive(true);
-        optionsButton.SetActive(true);
     }
 
     public void QuitGameButton() {
@@ -58,73 +55,47 @@ public class ButtonManager : MonoBehaviour {
     }
 
     public void CreditsButton() {
-        instructionScreen.SetActive(false);
+        CloseUI();
         creditsScreen.SetActive(true);
-        exitCreditButton.SetActive(true);
-        exitInstructionButton.SetActive(false);
-        creditsButton.SetActive(false);
     }
 
     public void ExitCreditButton() {
-        creditsScreen.SetActive(false);
-        exitCreditButton.SetActive(false);
-        InstructionsButton();
+        CloseUI();
+        instructionScreen.SetActive(true);
     }
 
     public void TurnOnGameOver() {
-        //Time.timeScale = 0f;
         gameOverScreen.gameObject.SetActive(true);
-        restartButton.SetActive(true);
         quitButton.SetActive(true);
-        scoreText.SetActive(true);
-        highScoreText.SetActive(true);
-        timerScriprt.playerGrid.SetActive(false);
-
     }
 
     public void RestartButton() {
-        //Time.timeScale = 1f;
-        processingScript.hueChnage = 0;
-        processingScript.ChangeHueProfileOne();
+        if (!processingScript.hueSet)
+        {
+            processingScript.hueChnage = 0;
+            processingScript.ChangeHueProfileOne();
+        }
         scoreScript.score = 0;
         scoreScript.UpdateText();
         livesScript.dead = false;
         livesScript.lives = 3;
         gameOverScreen.gameObject.SetActive(false);
-        restartButton.SetActive(false);
         quitButton.SetActive(false);
-        scoreText.SetActive(false);
-        highScoreText.SetActive(false);
+        inGameUIPanel.SetActive(true);
         livesScript.UpdateText();
         timerScriprt.playerGrid.SetActive(false);
-        //playerGrid.GetComponent<MeshRenderer>().enabled = false;
     }
 
     public void OptionsButton() {
-        // Time.timeScale = 0f;
+        CloseUI();
         OtherHighScore();
-        optionsButton.SetActive(false);
-        quitButton.SetActive(false);
-        instructionButton.SetActive(false);
-        exitOptionButton.SetActive(true);
-        resetButton.SetActive(true);
-        otherHighScore.SetActive(true);
-        blankScreen.SetActive(true);
-        slider.SetActive(false);
-        heart.SetActive(false);
-        livesText.SetActive(false);
-
+        optionsScreen.SetActive(true);
     }
 
     public void ExitOptionsButton() {
-       // Time.timeScale = 1f;
-        blankScreen.SetActive(false);
-        resetButton.SetActive(false);
-        otherHighScore.SetActive(false);
-        exitOptionButton.SetActive(false);
-        optionsButton.SetActive(true);
+        CloseUI();
+        StartScreenPanel.SetActive(true);
         quitButton.SetActive(true);
-        instructionButton.SetActive(true);
     }
 
     public void ResetButton()
@@ -134,5 +105,25 @@ public class ButtonManager : MonoBehaviour {
         newtext = "HighScore: 0"; 
     }
 
+    public void SliderChange() {
+        AudioListener.volume = volumeSlider.value;
+    }
+
+    public void SetHueButton(int hue) {
+        switch (hue) {
+            case 1:
+                processingScript.ChangeHueProfileOne();
+                break;
+            case 2:
+                processingScript.ChangeHueProfileTwo();
+                break;
+            case 3:
+                processingScript.ChangeHueProfileThree();
+                break;
+            case 4:
+                processingScript.ChangeHueProfileFour();
+                break;
+        }
+    }
 
 }

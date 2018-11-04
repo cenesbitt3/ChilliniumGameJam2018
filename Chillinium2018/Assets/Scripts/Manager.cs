@@ -23,11 +23,13 @@ public class Manager : MonoBehaviour {
     ButtonManager buttonManagerScript;
     PlayerLives lifeScript;
     public GameObject cam;
+    TimerCreation timerScript;
 
     public void Awake()
     {
         buttonManagerScript = FindObjectOfType<ButtonManager>();
         lifeScript = FindObjectOfType<PlayerLives>();
+        timerScript = FindObjectOfType<TimerCreation>();
     }
 
     public void Update()
@@ -41,18 +43,20 @@ public class Manager : MonoBehaviour {
         }
 
         if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0) && !Input.GetKeyDown(KeyCode.Mouse1) && !Input.GetKeyDown(KeyCode.Mouse2)) {
-            if (readyToPlay) {
-                holderGameObject.transform.parent = ring.transform;
-                buttonManagerScript.instructionButton.SetActive(false);
-                buttonManagerScript.quitButton.SetActive(false);
-                buttonManagerScript.optionsButton.SetActive(false);
-                buttonManagerScript.livesText.SetActive(true);
-                buttonManagerScript.heart.SetActive(true);
-                buttonManagerScript.slider.SetActive(true);
-                anim.SetBool("GO", true);
-                cam.GetComponent<AudioSource>().clip = Main;
-                cam.GetComponent<AudioSource>().Play();
-            }
+            
+            holderGameObject.transform.parent = ring.transform;
+            buttonManagerScript.StartScreenPanel.SetActive(false);
+            buttonManagerScript.quitButton.SetActive(false);
+            buttonManagerScript.inGameUIPanel.SetActive(true);
+            anim.SetBool("GO", true);
+            GameObject introtext = GameObject.FindWithTag("IntroText");
+            Destroy(introtext);
+            timerScript.playerGrid.SetActive(true);
+            timerScript.SetReadyToSpawn(true);
+            startOfGame = true;
+            cam.GetComponent<AudioSource>().clip = Main;
+            cam.GetComponent<AudioSource>().Play();
+           
         }
     }
 

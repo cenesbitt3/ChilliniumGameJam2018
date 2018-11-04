@@ -124,11 +124,12 @@ public class EnemyGrid : MonoBehaviour {
                 spawner.referenceToPlace.Add(places[i]);
                 
             }
+            ringScript.howManyAtoms = spawner.referenceToPlace.Count;
         }
         first = false;
         spawner.Spawn2();
         // tell rotateRing how many atoms are being spawned
-        ringScript.howManyAtoms = spawner.referenceToPlace.Count;
+       
 
 
 
